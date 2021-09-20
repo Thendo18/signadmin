@@ -31,7 +31,7 @@ export class UsersService
 
     update_user(id: string, body:any)
     {
-        return this.httpClient.put(`${this.adduser}${id}`,body)
+        return this.httpClient.put(`${this.url}${id}`,body)
     }
 
    
