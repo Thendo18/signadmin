@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
 import { SignsService } from 'src/app/services/signs.service';
-
-
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+import { ModalContentComponent } from '../../modal-content/modal-content.component';
 @Component({
   selector: 'app-sign',
   templateUrl: './sign.component.html',
@@ -16,12 +16,13 @@ export class SignComponent implements OnInit {
   allsigns:any;
   
 
-  constructor(private formBuilder: FormBuilder,private usersService:UsersService,private signService:SignsService ) { }
+  constructor(private formBuilder: FormBuilder,private usersService:UsersService,private signService:SignsService ,private signModal:NgbModal) { }
 
   ngOnInit() {
       this.addSignForm = this.formBuilder.group({
           name: ['', Validators.required],
           image: ['', Validators.required],
+          
   })
   this.signService.getAllWord().subscribe((array)=>
   {
@@ -29,7 +30,7 @@ export class SignComponent implements OnInit {
   })
 
 
- 
+
 
 
 }
@@ -48,6 +49,7 @@ export class SignComponent implements OnInit {
       
       // display form values on success
       alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.addSignForm.value, null, 4));
+      localStorage.setItem("form",this.addSignForm.value);
   }
 
   onReset() {
@@ -71,5 +73,21 @@ refresh(): void {
   window.location.reload();
 }
 
+openWordModal(id:any){
+  console.log("we get this"+id);
+  localStorage.setItem("id",id);
+  let ngbModalOptions : NgbModalOptions = {
+    backdrop: 'static',
+    keyboard:false,
+    size:'md',
+  };
+  const modalRef= this.signModal.open(ModalContentComponent, ngbModalOptions)
 
 }
+
+
+}
+
+
+
+
