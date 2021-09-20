@@ -16,6 +16,7 @@ import { cardsComponent } from './components/cards/cards.component';
 import { UserTablePageComponent } from './pages/user-table-page/user-table-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { FormsModule } from '@angular/forms';
 
@@ -40,7 +41,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule 
+    FormsModule ,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,11 +15,18 @@
                       
                       <td>{{user.word}}</td>
                       <td>{{user.gif}}</td>
-                      <td>{{user.approved}}</td>
                       <td>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
+                        <span *ngIf="user.approved">
+                          
+                        </span>
+                        <span *ngIf="!user.approved">
+
+                        </span>
+                      </td>
+                      <td>
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
               view
-            </button>
+            </button> -->
           </td>
 
           <td>
