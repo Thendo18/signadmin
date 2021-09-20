@@ -7,17 +7,17 @@ import { RequestedService } from 'src/app/services/requested.service';
   styleUrls: ['./requested.component.scss']
 })
 export class RequestedComponent implements OnInit {
-  allUsers:any;
-  constructor(public requestedService:RequestedService) { }
+  
+  allWords:any;
+
+  constructor(public requestedService:RequestedService) {}
 
   ngOnInit(): void {
 
-    this.requestedService.getAllUsers()
-    .subscribe((users) => {
-      this.allUsers = users
-      console.log("All users"+this.allUsers)
-    }
-   );
+    this.requestedService.getAllWords().subscribe((words)=> {
+
+      this.allWords = words;
+    });
   }
 
 }

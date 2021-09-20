@@ -31,7 +31,7 @@
             </tr>
           </thead>
           <tbody *ngFor="let user of users; let i = index">
-            <tr>
+            <tr *ngIf="user">
               <td>{{ user.username }}</td>
               <td>{{ user.username }}</td>
 
@@ -62,7 +62,7 @@
                   </svg>
                 </span>
           </td>
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div *ngIf="selected" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -73,16 +73,7 @@
                 </div>
                 <div class="modal-body">
                   <form #f="ngForm" class="mat-elevation-z8" style="width: 100%; padding: 5px;" >
-          
-     
                     <input placeholder="Username" name="name" [(ngModel)] = "selected.username" required>
-            
-               
-                      
-                   
-                
-                   
-              
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary" (click)="addUser(f.value)">Save changes</button>

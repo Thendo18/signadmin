@@ -7,12 +7,13 @@ import { Users } from '../Classes/users';
   providedIn: 'root'
 })
 export class RequestedService {
-  url: string ="http://localhost:3000/requested";
+  url: string ="http://localhost:3000/requestedsigns";
+  
   
 
   constructor(private http: HttpClient) {}
 
-  getAllUsers() {
+  getAllWords() {
   
     console.log(Response);
     return this.http.get(this.url).pipe(
