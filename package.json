@@ -1,5 +1,5 @@
 {
-  "name": "bootstrap4-dylut",
+  "name": "sign",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~11.2.12",
     "@angular/platform-browser-dynamic": "~11.2.12",
     "@angular/router": "~11.2.12",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@types/jquery": "^3.5.5",
     "animate.css": "^4.1.1",
     "bootstrap": "^4.6.0",

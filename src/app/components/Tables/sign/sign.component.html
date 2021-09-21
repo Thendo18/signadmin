@@ -40,17 +40,14 @@
             <tr *ngFor="let word of allsigns; let i = index">
               <td>{{word.word}}</td>
               <td>
-                <span>{{word.pic_gif}}</span> 
-            
+                <span>{{word.image}} </span> 
                 <button
                   type="button"
                   class="btn btns"
                   data-toggle="modal"
-                  data-target="#modelId"
-                >
-                 view 
+                  data-target="#modelId">view 
                 </button>
-
+             
               </td>
               <td>
                 <span>
