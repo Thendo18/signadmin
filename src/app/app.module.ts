@@ -19,6 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 //import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { FormsModule } from '@angular/forms';
+import { ModalContentComponent } from './components/modal-content/modal-content.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     LoginPageComponent,
     UserTablePageComponent,
+    ModalContentComponent,
    
   ],
   imports: [
@@ -41,10 +44,12 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule 
+    FormsModule,
+NgbModule 
     //FontAwesomeModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ ModalContentComponent ]
 })
 export class AppModule { }
