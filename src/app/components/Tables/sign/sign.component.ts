@@ -10,7 +10,7 @@ import { ModalContentComponent } from '../../modal-content/modal-content.compone
   styleUrls: ['./sign.component.scss']
 })
 export class SignComponent implements OnInit {
-
+   private modalRef;
   addSignForm: FormGroup;
   submitted = false;
   allsigns:any;
@@ -74,8 +74,8 @@ refresh(): void {
 }
 
 openWordModal(id:any){
-  console.log("we get this"+id);
-  localStorage.setItem("id",id);
+  //console.log("we get this"+id );
+  localStorage.setItem("id",id );
   let ngbModalOptions : NgbModalOptions = {
     backdrop: 'static',
     keyboard:false,
