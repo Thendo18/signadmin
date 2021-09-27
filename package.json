@@ -26,6 +26,8 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
+    "jwt-decode": "^3.1.2",
+    "ngx-toastr": "^14.1.3",
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

@@ -5,6 +5,7 @@ import { Users } from "src/app/Classes/users";
 import { BlacklistedService } from "src/app/services/blacklisted.service";
 import { UsersService } from "src/app/services/users.service";
 
+
 @Component({
   selector: "app-users",
   templateUrl: "./users.component.html",
@@ -12,10 +13,13 @@ import { UsersService } from "src/app/services/users.service";
 })
 export class UsersComponent implements OnInit {
   users: any;
-  addSignForm: FormGroup;
+ 
   submitted = false;
   deletedInfo: any;
-  selected:any;
+  selected:any = {username: ''};
+  retrievedUser={};
+  registerForm: FormGroup;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,11 +30,29 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
-
+    this.registerForm = this.formBuilder.group({
+      username: ['', Validators.required],
+    
+  })
  
   }
 
  
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.registerForm.invalid) {
+        return;
+    }
+
+    // display form values on success
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+}
+
+
+
   getUsers(): any {
     this.usersService.get_All_Users().subscribe((arg) => {
       this.users = arg;
@@ -57,18 +79,26 @@ export class UsersComponent implements OnInit {
       });
   }
 
-  Update(user,id:any)
+
+  Update(id:any,user:any)
   {
     console.log(id);
-   this.usersService.get_One_User(id).subscribe((req)=>
-    {
-      this.selected=req;
-      console.log("details"+this.selected);
-    });
-    // this.usersService.update_user(id,user).subscribe((req)=>
-    // {
+    this.retrievedUser = id;
 
-    // });
+   
+    }
+
+
+    Updating(id:any,user:any)
+    {
+
+
+
+      this.usersService.update_user(id,this.registerForm.value).subscribe((req)=>
+      {
+  console.log(req);
+  
+      });
     }
 
     addUser(users:Users)
