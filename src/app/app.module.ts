@@ -21,6 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { chartsComponent } from './components/charts/charts.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginPageComponent,
     UserTablePageComponent,
     ModalContentComponent,
+    chartsComponent
    
   ],
   imports: [
@@ -45,6 +49,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    NgApexchartsModule,
 NgbModule 
     //FontAwesomeModule
   ],
