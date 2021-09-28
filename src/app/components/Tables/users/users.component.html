@@ -101,9 +101,9 @@
                   
                           <div class="form-group col-5">
                               <label>Email</label>
-                              <input placeholder={{retrievedUser.username}} type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-                              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                                  <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                              <input placeholder={{retrievedUser.username}} type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                              <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                  <div *ngIf="f.username.errors.required">First Name is required</div>
                               </div>
                           </div>
                       
@@ -112,7 +112,7 @@
                
                       <div class="text-center">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" (click)="Updating(retrievedUser._id,retrievedUser)">Save changes</button>
+                        <button type="button" class="btn btn-primary" (click)="Update(retrievedUser._id)">Save changes</button>
                       </div>
                   </form>
                     <!-- <form #f="ngForm" class="mat-elevation-z8" style="width: 100%; padding: 5px;" >

@@ -80,26 +80,30 @@ export class UsersComponent implements OnInit {
   }
 
 
-  Update(id:any,user:any)
+  Update(id:any)
   {
-    console.log(id);
+    console.log("Id received"+id);
     this.retrievedUser = id;
-
+    this.usersService.update_user(id,this.registerForm.value).subscribe((req)=>
+          {
+      console.log(req);
+      
+          });
    
     }
 
 
-    Updating(id:any,user:any)
-    {
+//     Updating(id:any)
+//     {
 
 
-
-      this.usersService.update_user(id,this.registerForm.value).subscribe((req)=>
-      {
-  console.log(req);
+// console.log(this.registerForm.value);
+//       this.usersService.update_user(id,this.registerForm.value).subscribe((req)=>
+//       {
+//   console.log(req);
   
-      });
-    }
+//       });
+//     }
 
     addUser(users:Users)
     {

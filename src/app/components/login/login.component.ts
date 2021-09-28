@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
 import jwt_decode from 'jwt-decode';
 import { ToastrService } from 'ngx-toastr';
+import { decode } from 'querystring';
 
 @Component({
   selector: 'app-login',
@@ -43,9 +44,11 @@ export class LoginComponent implements OnInit {
       var token = this.userToken.accessToken;
 
       var decoded = jwt_decode(token);
-      console.log(decoded);
 
-            // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
+    
+ localStorage.setItem("Token",token);
+
+    
 
        console.log("infor received "+ decoded)
        this.toastr.success( 'Succesfully Logged IN');
