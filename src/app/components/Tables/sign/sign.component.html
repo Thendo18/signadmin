@@ -32,8 +32,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let word of allsigns; let i = index">
-              <td>{{word.word}}</td>
+            <tr *ngFor="let word of allsigns;index as i">
+              <td>{{i+1}} {{word.word}}</td>
               <td>
                 <span>{{word.image}} </span> 
                 <button
