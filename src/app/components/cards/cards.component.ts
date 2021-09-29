@@ -32,18 +32,18 @@ export class cardsComponent implements OnInit {
           this.sumSigns = array;
           console.log(this.sumSigns.length);     
       })
-      
+
       this.usersTable.get_All_Users().subscribe((array)=>
       {
           this.sumUsers = array;
           console.log(this.sumUsers.length);     
       })
-  }
 
-
-  sumUser()
-  {
-    
+      this.requestedSigns.getAllWords().subscribe((array)=>
+      {
+          this.sumRequested = array;
+          console.log(this.sumRequested.length);     
+      })
   }
 
   logout()
