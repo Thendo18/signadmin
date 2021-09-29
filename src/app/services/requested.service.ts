@@ -14,8 +14,6 @@ export class RequestedService {
   constructor(private http: HttpClient) {}
 
   getAllWords() {
-  
-    console.log(Response);
     return this.http.get(this.url).pipe(
       map(response => response)
 

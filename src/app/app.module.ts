@@ -31,6 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignChartsComponent } from './components/charts/sign-charts/sign-charts.component';
 
 import { piechartComponent} from './components/charts/pie-chart/pie-chart.component'
+import {ToastrService} from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,7 @@ import { piechartComponent} from './components/charts/pie-chart/pie-chart.compon
 NgbModule 
     //FontAwesomeModule
   ],
-  providers: [],
+  providers: [ToastrService],
   bootstrap: [AppComponent],
   entryComponents: [ ModalContentComponent ]
 })

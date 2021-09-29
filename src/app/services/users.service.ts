@@ -25,7 +25,8 @@ export class UsersService
       return this.httpClient.get(`${this.url}`+id)
     }
 
-    public add_User(details: Users){
+    public add_User(details: Users)
+    {
       return this.httpClient.post<Users>(`${this.signUp}`,details);
     }
 
@@ -33,8 +34,6 @@ export class UsersService
     {
         return this.httpClient.put(`${this.url}${id}`,body)
     }
-
-   
 
     delete_user(id:any)
     {

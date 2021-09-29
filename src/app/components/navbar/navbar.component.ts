@@ -13,18 +13,17 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
-   
+ 
    this.token = jwt_decode(localStorage.getItem("Token"));
 
   }
 
+ 
 
   logout(){
     this.token  = null;
-    // this.user = null;
     localStorage.removeItem('Token');
-    // localStorage.removeItem('user');
+    window.location.reload();
 }
 
 }

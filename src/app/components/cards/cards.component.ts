@@ -12,10 +12,10 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class cardsComponent implements OnInit {
 
-  public sumSigns : number = 0;
-  public sumUsers : number = 0;
-  public sumRequested : number = 0;
-  public sumBlacklisted : number = 0;
+  public sumSigns: any=[];
+  public sumUsers : any=[];
+  public sumRequested : any=[];
+  public sumBlacklisted : any=[];
 
 
   constructor(private router:Router, 
@@ -29,14 +29,23 @@ export class cardsComponent implements OnInit {
 
       this.signs.getAllWord().subscribe((array)=>
       {
-
-          //  for(let x=0; x < array.length; x++)
-          // {
-          //    this.sumSigns = array[0+1].length;
-          // }
-          this.sumSigns = Array.length;
+          this.sumSigns = array;   
       })
-    
+
+      this.usersTable.get_All_Users().subscribe((array)=>
+      {
+          this.sumUsers = array;    
+      })
+
+      this.requestedSigns.getAllWords().subscribe((array)=>
+      {
+          this.sumRequested = array;    
+      })
+
+      this.blacklistedUsers.getAllUsers().subscribe((array)=>
+      {
+          this.sumBlacklisted = array;     
+      })
   }
 
   logout()
