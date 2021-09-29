@@ -93,17 +93,7 @@ export class UsersComponent implements OnInit {
     }
 
 
-//     Updating(id:any)
-//     {
 
-
-// console.log(this.registerForm.value);
-//       this.usersService.update_user(id,this.registerForm.value).subscribe((req)=>
-//       {
-//   console.log(req);
-  
-//       });
-//     }
 
     addUser(users:Users)
     {
