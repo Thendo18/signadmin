@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import {
   ChartComponent,
   ApexAxisChartSeries,
+  ApexResponsive,
   ApexChart,
   ApexXAxis,
   ApexTitleSubtitle
@@ -30,19 +31,29 @@ export class chartsComponent {
       series: [
         {
           name: "My-series",
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+          data: [5, 1 ]
         }
+
       ],
       chart: {
         height: 350,
-        type: "bar"
+        type: "bar",
+        width: '25%'
+    
       },
       title: {
-        text: "My First Angular Chart"
+        text: "Users"
       },
       xaxis: {
-        categories: ["Jan", "Feb",  "Mar",  "Apr",  "May",  "Jun",  "Jul",  "Aug", "Sep"]
+        categories: ["Active users", "Blacklisted users"]
       }
     };
+
+
+
+
+    
   }
+
+  
 }
