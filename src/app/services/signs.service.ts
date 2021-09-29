@@ -12,7 +12,6 @@ export class SignsService {
   constructor(private http: HttpClient) { }
     
     getAllWord(){
-      console.log(Response);
       return this.http.get(this.url).pipe(
         map(response => response));
     }

@@ -34,8 +34,6 @@ export class UsersService
         return this.httpClient.put(`${this.url}${id}`,body)
     }
 
-   
-
     delete_user(id:any)
     {
       return this.httpClient.delete(`${this.url}${id}`)

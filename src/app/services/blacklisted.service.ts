@@ -14,7 +14,6 @@ export class BlacklistedService {
 
   getAllUsers() {
   
-    console.log(Response);
     return this.http.get(this.url).pipe(
       map(response => response)
 
