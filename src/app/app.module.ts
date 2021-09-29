@@ -21,12 +21,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { chartsComponent } from './components/charts/users-charts/charts.component';
+
 import { NgApexchartsModule } from 'ng-apexcharts';
 
 
-//import { ToastrModule } from 'ngx-toastr';
+//import { ToastrModule } from 'ngx-toastr';        
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { SignChartsComponent } from './components/charts/sign-charts/sign-charts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginPageComponent,
     UserTablePageComponent,
     ModalContentComponent,
-    chartsComponent
+   
+    SignChartsComponent
    
   ],
   imports: [

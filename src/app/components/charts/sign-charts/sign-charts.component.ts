@@ -1,12 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
-  ChartComponent,
+ 
   ApexAxisChartSeries,
   ApexResponsive,
   ApexChart,
   ApexXAxis,
   ApexTitleSubtitle
 } from "ng-apexcharts";
+
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -15,15 +16,16 @@ export type ChartOptions = {
   title: ApexTitleSubtitle;
 };
 @Component({
-  selector: 'charts-root',
-  templateUrl: './charts.component.html',
-  styleUrls: ['./charts.component.scss']
+  selector: 'app-sign-charts',
+  templateUrl: './sign-charts.component.html',
+  styleUrls: ['./sign-charts.component.scss']
 })
-export class chartsComponent {
+export class SignChartsComponent implements OnInit {
+
   title(title: any) {
     throw new Error('Method not implemented.');
   }
-  @ViewChild("chart") chart: ChartComponent = new ChartComponent;
+  //@ViewChild("chart") chart: signchartsComponent = new signchartsComponent;
   public chartOptions: Partial<ChartOptions>;
 
   constructor() {
@@ -54,6 +56,10 @@ export class chartsComponent {
 
     
   }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   
 }
+
