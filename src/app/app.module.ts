@@ -29,6 +29,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SignChartsComponent } from './components/charts/sign-charts/sign-charts.component';
+
+import { piechartComponent} from './components/charts/pie-chart/pie-chart.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,8 @@ import { SignChartsComponent } from './components/charts/sign-charts/sign-charts
     UserTablePageComponent,
     ModalContentComponent,
    
-    SignChartsComponent
+    SignChartsComponent,
+    piechartComponent
    
   ],
   imports: [

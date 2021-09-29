@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
- 
-  ApexAxisChartSeries,
+ ApexAxisChartSeries,
   ApexResponsive,
   ApexChart,
   ApexXAxis,
