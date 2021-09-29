@@ -11,19 +11,15 @@
         data-mdb-ripple-color="dark"
         onclick="modal"
         data-toggle="modal"
-        data-target="#Modal4"
-      >
-      <img src="https://img.icons8.com/material-outlined/24/000000/add.png"/>
-        Add
-      </button>
+        data-target="#Modal4">
+        <img src="https://img.icons8.com/material-outlined/24/000000/add.png" />Add</button>
     </div>
   </div>
 
   <div class="row mt-3">
     <div class="container-fluid">
-      <div class=" table-responsive">
+      <div class="table-responsive">
         <table class="table table-hover">
-            
           <thead>
             <tr>
               <th scope="col">Word/Sentence</th>
@@ -33,16 +29,17 @@
           </thead>
           <tbody>
             <tr *ngFor="let word of allsigns">
-              <td>{{word.word}}</td>
+              <td>{{ word.word }}</td>
               <td>
-                <span>{{word.image}} </span> 
+                <span>{{ word.image }} </span>
                 <button
                   type="button"
                   class="btn btns"
                   data-toggle="modal"
-                 (click)="openWordModal(word._id)">view 
+                  (click)="openWordModal(word._id)"
+                >
+                  view
                 </button>
-             
               </td>
               <td>
                 <span>
@@ -88,15 +85,9 @@
             </tr>
           </tbody>
         </table>
-       
       </div>
     </div>
   </div>
-  
-
-
-
-
 
   <!-- Modal -->
   <!-- <div
@@ -147,7 +138,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
           <button
             type="button"
             class="close"
@@ -196,16 +187,13 @@
               </div>
             </div>
 
-
-
             <div class="modal-footer">
-              <button class="btn btn-primary mr-1">Register</button>
               <button
-                class="btn btn-secondary"
+                class="btn btn-primary mr-1"
                 type="reset"
                 (click)="onReset()"
               >
-                Cancel
+                Register
               </button>
             </div>
           </form>
@@ -215,54 +203,77 @@
   </div>
 </div>
 
-
 <!-- Modal -->
-<div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div
+  class="modal fade"
+  id="Modal3"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit sign </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="exampleModalLabel">Edit sign</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="modal-body">
-          <img src="https://www.hellodoctor.co.za/wp-content/uploads/2014/09/Hello.jpg">
-      </div>
+          <img
+            src="https://www.hellodoctor.co.za/wp-content/uploads/2014/09/Hello.jpg"
+          />
+        </div>
 
-<label class="form-label" for="customFile">Upload an image or GIF </label>
-<input type="file" class="form-control" id="customFile" />
+        <label class="form-label" for="customFile"
+          >Upload an image or GIF
+        </label>
+        <input type="file" class="form-control" id="customFile" />
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" >Save changes</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
 
-
 <!-- Modal -->
-<div class="modal fade" id="Modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div
+  class="modal fade"
+  id="Modal4"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add sign </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="exampleModalLabel">Add sign</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      
-
-<label class="form-label" for="customFile">Upload an image or GIF </label>
-<input type="file" class="form-control" id="customFile" />
+        <label class="form-label" for="customFile"
+          >Upload an image or GIF
+        </label>
+        <input type="file" class="form-control" id="customFile" />
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
       </div>
     </div>
   </div>
