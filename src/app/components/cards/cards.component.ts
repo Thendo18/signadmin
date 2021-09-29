@@ -29,20 +29,22 @@ export class cardsComponent implements OnInit {
 
       this.signs.getAllWord().subscribe((array)=>
       {
-          this.sumSigns = array;
-          console.log(this.sumSigns.length);     
+          this.sumSigns = array;   
       })
 
       this.usersTable.get_All_Users().subscribe((array)=>
       {
-          this.sumUsers = array;
-          console.log(this.sumUsers.length);     
+          this.sumUsers = array;    
       })
 
       this.requestedSigns.getAllWords().subscribe((array)=>
       {
-          this.sumRequested = array;
-          console.log(this.sumRequested.length);     
+          this.sumRequested = array;    
+      })
+
+      this.blacklistedUsers.getAllUsers().subscribe((array)=>
+      {
+          this.sumBlacklisted = array;     
       })
   }
 
