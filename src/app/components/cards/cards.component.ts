@@ -12,7 +12,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class cardsComponent implements OnInit {
 
-  public sumSigns : number = 0;
+  public sumSigns: any=[];
   public sumUsers : number = 0;
   public sumRequested : number = 0;
   public sumBlacklisted : number = 0;
@@ -29,12 +29,8 @@ export class cardsComponent implements OnInit {
 
       this.signs.getAllWord().subscribe((array)=>
       {
-
-          //  for(let x=0; x < array.length; x++)
-          // {
-          //    this.sumSigns = array[0+1].length;
-          // }
-          this.sumSigns = Array.length;
+          this.sumSigns = array;
+          console.log(this.sumSigns.length);     
       })
     
   }

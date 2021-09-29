@@ -65,7 +65,7 @@ export class SignComponent implements OnInit {
   // console.log("index:"+id);
    if(confirm("Are you sure you want to delete this word")) 
    { this.signService.deleteWord(id).subscribe((res)=>res)};
-  this.refresh();
+   this.refresh();
   
 }
   //to refresh a page
