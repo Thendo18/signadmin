@@ -10,9 +10,9 @@ export class UsersService
 {
 
     url: string ="http://localhost:3000/auth/";
+    signUp:string="http://localhost:3000/auth/signup"; 
+    signIn:string="http://localhost:3000/auth/signin"; 
 
-    adduser:string="http://localhost:3000/auth/signup"; 
-    // url = environment.getAllUsersURL;
     constructor( private httpClient:HttpClient) { }
 
     get_All_Users()
@@ -26,7 +26,7 @@ export class UsersService
     }
 
     public add_User(details: Users){
-      return this.httpClient.post<Users>(`${this.adduser}`,details);
+      return this.httpClient.post<Users>(`${this.signUp}`,details);
     }
 
     update_user(id: string, body:any)
@@ -39,5 +39,13 @@ export class UsersService
     delete_user(id:any)
     {
       return this.httpClient.delete(`${this.url}${id}`)
+  }
+
+
+
+  signInUser(details:Users)
+  {
+
+    return this.httpClient.post<Users>(`${this.signIn}`,details);
   }
 }
