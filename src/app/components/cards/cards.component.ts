@@ -13,9 +13,9 @@ import { UsersService } from 'src/app/services/users.service';
 export class cardsComponent implements OnInit {
 
   public sumSigns: any=[];
-  public sumUsers : number = 0;
-  public sumRequested : number = 0;
-  public sumBlacklisted : number = 0;
+  public sumUsers : any=[];
+  public sumRequested : any=[];
+  public sumBlacklisted : any=[];
 
 
   constructor(private router:Router, 
@@ -32,6 +32,17 @@ export class cardsComponent implements OnInit {
           this.sumSigns = array;
           console.log(this.sumSigns.length);     
       })
+      
+      this.usersTable.get_All_Users().subscribe((array)=>
+      {
+          this.sumUsers = array;
+          console.log(this.sumUsers.length);     
+      })
+  }
+
+
+  sumUser()
+  {
     
   }
 
