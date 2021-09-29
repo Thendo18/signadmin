@@ -23,6 +23,9 @@ import { ModalContentComponent } from './components/modal-content/modal-content.
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {ToastrService} from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +54,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 NgbModule 
     //FontAwesomeModule
   ],
-  providers: [],
+  providers: [ToastrService],
   bootstrap: [AppComponent],
   entryComponents: [ ModalContentComponent ]
 })
