@@ -31,8 +31,8 @@ export class SignChartsComponent implements OnInit {
     this.chartOptions = {
       series: [
         {
-          name: "My-series",
-          data: [5, 1 ]
+          name: "Users/Signs",
+          data: [5, 1 , 10, 2, 5, 8 ] 
         }
 
       ],
@@ -43,11 +43,15 @@ export class SignChartsComponent implements OnInit {
     
       },
       title: {
-        text: "Users"
+        text: "Users/Signs"
       },
       xaxis: {
-        categories: ["Active users", "Blacklisted users"]
-      }
+        categories: ["Users", "Signs"]
+      },
+      
+
+      
+      
     };
 
 
