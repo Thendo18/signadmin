@@ -5,7 +5,6 @@ import { Users } from "src/app/Classes/users";
 import { BlacklistedService } from "src/app/services/blacklisted.service";
 import { UsersService } from "src/app/services/users.service";
 
-
 @Component({
   selector: "app-users",
   templateUrl: "./users.component.html",
@@ -13,13 +12,13 @@ import { UsersService } from "src/app/services/users.service";
 })
 export class UsersComponent implements OnInit {
   users: any;
- 
+
   submitted = false;
   deletedInfo: any;
-  selected:any = {username: ''};
-  retrievedUser={};
+  selected: any = { username: "" };
+  retrievedUser = {};
   registerForm: FormGroup;
-
+  addUsersForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,10 +30,8 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.getUsers();
     this.registerForm = this.formBuilder.group({
-      username: ['', Validators.required],
-    
-  })
- 
+      username: ["", Validators.required],
+    });
   }
 
   onSubmit() {
@@ -42,14 +39,14 @@ export class UsersComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.registerForm.invalid) {
-        return;
+      return;
     }
 
     // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
-}
-
-
+    alert(
+      "SUCCESS!! :-)\n\n" + JSON.stringify(this.registerForm.value, null, 4)
+    );
+  }
 
   getUsers(): any {
     this.usersService.get_All_Users().subscribe((arg) => {
@@ -64,44 +61,41 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  blacklist(userId: any): void {    
+  blacklist(userId: any): void {
     this.usersService
       .update_user(userId, { blacklisted: true })
       .toPromise()
       .then(() => {
-        this.router.navigateByUrl('login', {skipLocationChange: true}).then(() => {
-          this.router.navigateByUrl('')
-        })
-      }).catch(err => {
+        this.router
+          .navigateByUrl("login", { skipLocationChange: true })
+          .then(() => {
+            this.router.navigateByUrl("");
+          });
+      })
+      .catch((err) => {
         return err.message;
       });
   }
 
-
-  Update(id:any)
-  {
-    console.log("Id received"+id);
+  Update(id: any) {
+    console.log("Id received" + id);
     this.retrievedUser = id;
-    this.usersService.update_user(id,this.registerForm.value).subscribe((req)=>
-          {
+    this.usersService
+      .update_user(id, this.registerForm.value)
+      .subscribe((req) => {
+        console.log(req);
+      });
+  }
+
+  get f() 
+  {
+    return this.addUsersForm.controls;
+  }
+
+  addUser(users: Users) {
+    console.log(users + "details");
+    this.usersService.add_User(users).subscribe((req) => {
       console.log(req);
-      
-          });
-        
-   
-    }
-
-
-
-
-    addUser(users:Users)
-    {
-      console.log(users+"details")
-      this.usersService.add_User(users).subscribe((req)=>
-      {
-console.log(req);
-      })
-    }
- 
-    
+    });
+  }
 }
