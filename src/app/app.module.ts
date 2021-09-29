@@ -25,7 +25,7 @@ import { chartsComponent } from './components/charts/charts.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
 
-import { ToastrModule } from 'ngx-toastr';
+//import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
@@ -53,7 +53,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     NgApexchartsModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(),
+    //ToastrModule,
 NgbModule 
     //FontAwesomeModule
   ],
