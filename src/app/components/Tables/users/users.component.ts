@@ -92,7 +92,8 @@ export class UsersComponent implements OnInit {
     return this.addUsersForm.controls;
   }
 
-  addUser(users: Users) {
+  addUser(users: Users) 
+  {
     console.log(users + "details");
     this.usersService.add_User(users).subscribe((req) => {
       console.log(req);
