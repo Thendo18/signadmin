@@ -1,43 +1,55 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-// import custom validator to validate that password and confirm password fields match
-import { MustMatch } from '../../_helpers/must-match.validator';
-
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { MustMatch } from "../../_helpers/must-match.validator";
+import { UsersService } from "src/app/services/users.service";
+import { ToastrService } from "ngx-toastr";
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: "app-register",
+  templateUrl: "./register.component.html",
+  styleUrls: ["./register.component.scss"],
 })
 export class RegisterComponent implements OnInit {
-  registerForm!: FormGroup;
+  registerForm: FormGroup;
   submitted = false;
-
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UsersService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
-      this.registerForm = this.formBuilder.group({
-          userName: ['', Validators.required],
-          email: ['', [Validators.required, Validators.email]],
-          password: ['', [Validators.required, Validators.minLength(6)]],
-          confirmPassword: ['', Validators.required]
-      }, {
-          validator: MustMatch('password', 'confirmPassword')
-      });
+    this.registerForm = this.formBuilder.group(
+      {
+        username: ["", [Validators.required, Validators.email]],
+        password: ["", [Validators.required, Validators.minLength(8)]],
+        confirmPassword: ["", Validators.required],
+      },
+      {
+        validator: MustMatch("password", "confirmPassword"),
+      }
+    );
   }
 
-  // convenience getter for easy access to form fields
-  get f() { return this.registerForm.controls; }
+  get f() {
+    return this.registerForm.controls;
+  }
 
   onSubmit() {
-      this.submitted = true;
+    this.submitted = true;
 
-      // stop here if form is invalid
-      if (this.registerForm.invalid) {
-          return;
+    if (this.registerForm.invalid) {
+      return;
+    }
+
+    this.userService.add_User(this.registerForm.value).subscribe(
+      (res) => {
+        this.toastr.success("Succesfully Registered");
+      },
+      (error) => {
+        this.toastr.warning(
+          'Incorrect Details *username must be longer than or equal to 4 characters *Password is too short (8 characters min)"'
+        );
       }
-
-      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
+    );
   }
-
 }

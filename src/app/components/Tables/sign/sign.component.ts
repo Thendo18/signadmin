@@ -55,26 +55,26 @@ export class SignComponent implements OnInit {
   onReset() {
       this.submitted = false;
       this.addSignForm.reset();
-      console.log(this.addSignForm.value);
+ 
       
   }
        
 
   delete(id:any) 
 { 
-  // console.log("index:"+id);
+
    if(confirm("Are you sure you want to delete this word")) 
    { this.signService.deleteWord(id).subscribe((res)=>res)};
   this.refresh();
   
 }
-  //to refresh a page
+
 refresh(): void {
   window.location.reload();
 }
 
 openWordModal(id:any){
-  //console.log("we get this"+id );
+
   localStorage.setItem("id",id );
   let ngbModalOptions : NgbModalOptions = {
     backdrop: 'static',

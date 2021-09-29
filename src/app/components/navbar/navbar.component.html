@@ -68,9 +68,8 @@
         >
           <li>
           
-            <!-- <a class="dropdown-item" href="#" >{{token.username}}</a> -->
-          
-          
+        
+            <a class="dropdown-item" *ngIf="!token">{{token.username.split("@gmail.com")}}</a>
           </li>
           <li>
             <a class="dropdown-item" href="#">Settings</a>
