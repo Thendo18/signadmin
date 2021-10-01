@@ -25,6 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {ToastrService} from 'ngx-toastr';
+import { MailComponent } from './components/mail/mail.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {ToastrService} from 'ngx-toastr';
     LoginPageComponent,
     UserTablePageComponent,
     ModalContentComponent,
+    MailComponent,
    
   ],
   imports: [
