@@ -32,7 +32,9 @@ export class SignChartsComponent implements OnInit {
       series: [
         {
           name: "Users/Signs",
-          data: [5, 1 , 10, 2, 5, 8 ] 
+          data: [5, 1 , ,10, 2, ],
+
+          
         }
 
       ],
@@ -40,16 +42,16 @@ export class SignChartsComponent implements OnInit {
         height: 350,
         type: "bar",
         width: '25%'
+        
     
       },
       title: {
         text: "Users/Signs"
       },
-      xaxis: {
-        categories: ["Users", "Signs"]
-      },
-      
 
+      xaxis: {
+        categories: ["Active users","Blacklisted users",  "Accepted signs ", " Rejected signs"]
+      },
       
       
     };

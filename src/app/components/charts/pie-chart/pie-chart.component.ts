@@ -21,12 +21,12 @@ export class piechartComponent {
   public chartOptions: Partial<ChartOptions>;
 
   constructor() { this.chartOptions = {
-    series: [44, 55, 13, 43, 22 , 12],
+    series: [44, 55,],
     chart: {
       width: 380,
       type: "pie"
     },
-    labels: ["Active users", "blacklisted users", "Available signs", "Requested signs", "Accepted signs","Rejected signs"],
+    labels: ["Active users", "blacklisted users"],
     responsive: [
       {
         breakpoint: 480,
