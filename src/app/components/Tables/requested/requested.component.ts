@@ -38,9 +38,18 @@ export class RequestedComponent implements OnInit {
 
   }
 
-  onRejected()
+  onRejected(word)
   {
+    this.mail.sendEmail('http://localhost:3000/mail',     {to: "tholakelebusi@gmail.com", // list of receivers
+      subject: "Word Rejected", // Subject line
+      text: `Your ${word.word} is rejected`, // plaintext word
+    }).toPromise().then(() => {
+      console.log('Email sent');
+      
+    }).catch(err => {
+      console.log(err.message);
+          })
+  
 
-  }
-
+}
 }
