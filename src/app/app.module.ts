@@ -21,9 +21,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ToastrModule } from 'ngx-toastr';
+
+import { NgApexchartsModule } from 'ng-apexcharts';
+
+
+//import { ToastrModule } from 'ngx-toastr';        
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { SignChartsComponent } from './components/charts/sign-charts/sign-charts.component';
+
+import { piechartComponent} from './components/charts/pie-chart/pie-chart.component'
 import {ToastrService} from 'ngx-toastr';
 import { MailComponent } from './components/mail/mail.component';
 
@@ -44,6 +51,9 @@ import { MailComponent } from './components/mail/mail.component';
     ModalContentComponent,
     MailComponent,
    
+    SignChartsComponent,
+    piechartComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -51,8 +61,9 @@ import { MailComponent } from './components/mail/mail.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    NgApexchartsModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(),
+    //ToastrModule,
 NgbModule 
     //FontAwesomeModule
   ],

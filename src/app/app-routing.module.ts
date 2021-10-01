@@ -9,6 +9,7 @@ import { BlacklistComponent } from './components/Tables/blacklist/blacklist.comp
 import { RequestedComponent } from './components/Tables/requested/requested.component';
 import { UserTablePageComponent } from './pages/user-table-page/user-table-page.component';
 
+
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'Register', component: RegisterComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'black',component:BlacklistComponent},
   {path:'req',component:RequestedComponent},
   {path:'userTable',component:UserTablePageComponent}
+ 
 
 ];
 

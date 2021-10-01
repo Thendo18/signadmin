@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MustMatch } from "../../_helpers/must-match.validator";
 import { UsersService } from "src/app/services/users.service";
 import { ToastrService } from "ngx-toastr";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
@@ -14,7 +15,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UsersService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router:Router
   ) {}
 
   ngOnInit() {
@@ -23,6 +25,7 @@ export class RegisterComponent implements OnInit {
         username: ["", [Validators.required, Validators.email]],
         password: ["", [Validators.required, Validators.minLength(8)]],
         confirmPassword: ["", Validators.required],
+        blacklisted:["false"],
       },
       {
         validator: MustMatch("password", "confirmPassword"),
@@ -43,11 +46,13 @@ export class RegisterComponent implements OnInit {
 
     this.userService.add_User(this.registerForm.value).subscribe(
       (res) => {
+        this.router.navigateByUrl("/Login");
         this.toastr.success("Succesfully Registered");
-      },
+        
+    },
       (error) => {
         this.toastr.warning(
-          'Incorrect Details *username must be longer than or equal to 4 characters *Password is too short (8 characters min)"'
+          'Username already exist'
         );
       }
     );
