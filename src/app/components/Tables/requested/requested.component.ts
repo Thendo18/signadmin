@@ -27,7 +27,7 @@ export class RequestedComponent implements OnInit {
     
     this.mail.sendEmail('http://localhost:3000/mail',     {to: "sitholeabbie@gmail.com", // list of receivers
       subject: "Word approved", // Subject line
-      text: `Your ${word.word} is accepted`, // plaintext word
+      text: `Your ${word.word} is accepted `, // plaintext word
     }).toPromise().then(() => {
       console.log('Email sent');
       
