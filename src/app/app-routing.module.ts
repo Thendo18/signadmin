@@ -11,7 +11,7 @@ import { UserTablePageComponent } from './pages/user-table-page/user-table-page.
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginPageComponent },
+  { path: 'Login', component: LoginPageComponent },
   { path: 'Register', component: RegisterComponent },
   { path: '', component: HomeComponent },
   {path:'users',component:UsersComponent},
