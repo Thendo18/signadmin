@@ -31,7 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignChartsComponent } from './components/charts/sign-charts/sign-charts.component';
 
 import { piechartComponent} from './components/charts/pie-chart/pie-chart.component'
-import {ToastrService} from 'ngx-toastr';
+import {ToastrModule, ToastrService} from 'ngx-toastr';
 import { MailComponent } from './components/mail/mail.component';
 
 @NgModule({
@@ -63,11 +63,11 @@ import { MailComponent } from './components/mail/mail.component';
     FormsModule,
     NgApexchartsModule,
     BrowserAnimationsModule, // required animations module
-    //ToastrModule,
+    ToastrModule.forRoot(),
 NgbModule 
     //FontAwesomeModule
   ],
-  providers: [ToastrService],
+  providers: [],
   bootstrap: [AppComponent],
   entryComponents: [ ModalContentComponent ]
 })
