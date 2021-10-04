@@ -21,35 +21,13 @@ export class RequestedComponent implements OnInit {
     });
   }
 
-  onAccepted(word)
+
+  delete(id:any)
   {
-    console.log(word);
+   this.requestedService.deleteUsers(id).subscribe((req)=>
+   {
+     
+   });
     
-    this.mail.sendEmail('http://localhost:3000/mail',     {to: "sitholeabbie@gmail.com", // list of receivers
-      subject: "Word approved", // Subject line
-      text: `Your ${word.word} is accepted `, // plaintext word
-    }).toPromise().then(() => {
-      console.log('Email sent');
-      
-    }).catch(err => {
-      console.log(err.message);
-          })
-
-
   }
-
-  onRejected(word)
-  {
-    this.mail.sendEmail('http://localhost:3000/mail',     {to: "tholakelebusi@gmail.com", // list of receivers
-      subject: "Word Rejected", // Subject line
-      text: `Your ${word.word} is rejected`, // plaintext word
-    }).toPromise().then(() => {
-      console.log('Email sent');
-      
-    }).catch(err => {
-      console.log(err.message);
-          })
-  
-
-}
 }
