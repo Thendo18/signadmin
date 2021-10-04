@@ -12,9 +12,9 @@ import { UserTablePageComponent } from './pages/user-table-page/user-table-page.
 
 const routes: Routes = [
   // { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginPageComponent, pathMatch: 'full' },
+  { path: '', component: LoginPageComponent, pathMatch: 'full' },
   { path: 'register', component: RegisterComponent, pathMatch: 'full' },
-  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, pathMatch: 'full' },
   {path:'users',component:UsersComponent, pathMatch: 'full'},
   {path:'sign',component:SignComponent, pathMatch: 'full'},
   {path:'black',component:BlacklistComponent, pathMatch: 'full'},

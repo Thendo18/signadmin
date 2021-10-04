@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
     this.token  = null;
     localStorage.removeItem('Token');
     this.router.navigateByUrl("/Login")
-    // window.location.reload();
+    window.location.reload();
 }
 convert(): void {
   let username: string = this.token.username;

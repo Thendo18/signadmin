@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
 
        
         this.toastr.success("Succesfully Logged IN");
-        this.router.navigateByUrl("/");
+        this.router.navigateByUrl("/home");
       },
       (error) => {
         this.toastr.warning("Incorrect Log In Details");
