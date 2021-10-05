@@ -15,9 +15,9 @@ export type ChartOptions = {
   title: ApexTitleSubtitle;
 };
 @Component({
-  selector: 'app-sign-charts',
-  templateUrl: './sign-charts.component.html',
-  styleUrls: ['./sign-charts.component.scss']
+  selector: 'app-graph-charts',
+  templateUrl: './graph.component.html',
+  styleUrls: ['./graph.component.scss']
 })
 export class SignChartsComponent implements OnInit {
 

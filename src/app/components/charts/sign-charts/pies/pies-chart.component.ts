@@ -12,7 +12,7 @@ export type ChartOptions = {
   labels: any;
 };
 @Component({
-  selector: 'app-pie-chart',
+  selector: 'app-signpie-chart',
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.scss']
 })
