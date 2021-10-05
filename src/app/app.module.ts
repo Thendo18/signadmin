@@ -17,20 +17,13 @@ import { UserTablePageComponent } from './pages/user-table-page/user-table-page.
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 //import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
 import { FormsModule } from '@angular/forms';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { NgApexchartsModule } from 'ng-apexcharts';
-
-
 //import { ToastrModule } from 'ngx-toastr';        
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { SignChartsComponent } from './components/charts/sign-charts/sign-charts.component';
-
-import { piechartComponent} from './components/charts/pie-chart/pie-chart.component'
+import { piechartComponent} from './components/charts/sign-charts/pie/pie-chart.component';
 import {ToastrService} from 'ngx-toastr';
 import { MailComponent } from './components/mail/mail.component';
 import { ChartsComponent } from './components/charts/charts/charts.component';
@@ -51,8 +44,6 @@ import { ChartsComponent } from './components/charts/charts/charts.component';
     UserTablePageComponent,
     ModalContentComponent,
     MailComponent,
-   
-    SignChartsComponent,
     piechartComponent,
     ChartsComponent
    

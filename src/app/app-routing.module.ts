@@ -8,7 +8,7 @@ import { SignComponent } from './components/Tables/sign/sign.component';
 import { BlacklistComponent } from './components/Tables/blacklist/blacklist.component';
 import { RequestedComponent } from './components/Tables/requested/requested.component';
 import { UserTablePageComponent } from './pages/user-table-page/user-table-page.component';
-import { SignChartsComponent } from './components/charts/sign-charts/sign-charts.component';
+import { SignChartsComponent } from './components/charts/sign-charts/graphs/sign-charts.component';
 
 
 const routes: Routes = [
