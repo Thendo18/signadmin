@@ -32,6 +32,7 @@ import { SignChartsComponent } from './components/charts/sign-charts/sign-charts
 
 import { piechartComponent} from './components/charts/pie-chart/pie-chart.component'
 import {ToastrService} from 'ngx-toastr';
+import { MailComponent } from './components/mail/mail.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {ToastrService} from 'ngx-toastr';
     LoginPageComponent,
     UserTablePageComponent,
     ModalContentComponent,
+    MailComponent,
    
     SignChartsComponent,
     piechartComponent

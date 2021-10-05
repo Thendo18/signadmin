@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
-import { Users } from "src/app/Classes/users";
+import { Router } from "@angular/router"; 
 import { BlacklistedService } from "src/app/services/blacklisted.service";
 import { UsersService } from "src/app/services/users.service";
 
@@ -19,6 +18,7 @@ export class UsersComponent implements OnInit {
   retrievedUser = {};
   registerForm: FormGroup;
   addUsersForm: FormGroup;
+  isAddMode:boolean=false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -62,6 +62,7 @@ export class UsersComponent implements OnInit {
   }
 
   blacklist(userId: any): void {
+  
     this.usersService
       .update_user(userId, { blacklisted: true })
       .toPromise()
@@ -75,6 +76,8 @@ export class UsersComponent implements OnInit {
       .catch((err) => {
         return err.message;
       });
+
+      window.location.reload();
   }
 
   Update(id: any) {
@@ -92,11 +95,13 @@ export class UsersComponent implements OnInit {
     return this.addUsersForm.controls;
   }
 
-  addUser(users: Users) 
+  addUser() 
   {
-    console.log(users + "details");
-    this.usersService.add_User(users).subscribe((req) => {
-      console.log(req);
-    });
+  
+    // this.router.navigateByUrl("/modal")
+    // console.log(users + "details");
+    // this.usersService.add_User(users).subscribe((req) => {
+    //   console.log(req);
+    // });
   }
 }

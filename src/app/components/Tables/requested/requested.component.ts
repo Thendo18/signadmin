@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 import { RequestedService } from 'src/app/services/requested.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class RequestedComponent implements OnInit {
   
   allWords:any;
 
-  constructor(public requestedService:RequestedService) {}
+  constructor(public requestedService:RequestedService, public mail:HttpService) {}
 
   ngOnInit(): void {
 
@@ -20,4 +21,13 @@ export class RequestedComponent implements OnInit {
     });
   }
 
+
+  delete(id:any)
+  {
+   this.requestedService.deleteUsers(id).subscribe((req)=>
+   {
+     
+   });
+    
+  }
 }

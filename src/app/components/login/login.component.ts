@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UsersService } from "src/app/services/users.service";
 import jwt_decode from "jwt-decode";
 import { ToastrService } from "ngx-toastr";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-login",
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private usersService: UsersService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    public router:Router
   ) {}
 
   ngOnInit(): void {
@@ -46,6 +48,7 @@ export class LoginComponent implements OnInit {
 
        
         this.toastr.success("Succesfully Logged IN");
+        this.router.navigateByUrl("/");
       },
       (error) => {
         this.toastr.warning("Incorrect Log In Details");

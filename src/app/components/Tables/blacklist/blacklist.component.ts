@@ -50,11 +50,12 @@ export class BlacklistComponent implements OnInit {
       .update_user(userId, { blacklisted: false })
       .toPromise()
       .then(() => {
-        this.router.navigateByUrl('login', {skipLocationChange: true}).then(() => {
+        this.router.navigateByUrl('Login', {skipLocationChange: true}).then(() => {
           this.router.navigateByUrl('')
         })
       }).catch(err => {
         return err.message;
       });
+      window.location.reload();
   }
 }
