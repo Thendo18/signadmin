@@ -31,7 +31,7 @@
             <tr *ngFor="let word of allsigns">
               <td>{{ word.word }}</td>
               <td>
-                <span>{{ word.image }} </span>
+                <!-- <span>{{ word.pic_gif }} </span> -->
                 <button
                   type="button"
                   class="btn btns"
@@ -193,13 +193,23 @@
         </button>
       </div>
       <div class="modal-body">
+        <form [formGroup]="form">
+          <div class="form-group">
+            <label for="word">Word</label>
+            <input type="text"
+              class="form-control" formControlName="word">
+          </div>
+            <label for="approved">Approved</label>
+            <input type="checkbox"
+               formControlName="approved">
+        </form>
         <label class="form-label" for="customFile"
           >Upload an image or GIF
         </label>
-        <input type="file" class="form-control" id="customFile" />
+        <input type="file" (change)="onChange($event)" class="form-control" id="customFile" />
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="addWord(form.value)" data-dismiss="modal">Save changes</button>
       </div>
     </div>
   </div>

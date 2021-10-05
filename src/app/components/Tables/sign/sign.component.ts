@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
 import { SignsService } from 'src/app/services/signs.service';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { ModalContentComponent } from '../../modal-content/modal-content.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-sign',
   templateUrl: './sign.component.html',
@@ -15,10 +16,16 @@ export class SignComponent implements OnInit {
   submitted = false;
   allsigns:any;
   
-
-  constructor(private formBuilder: FormBuilder,private usersService:UsersService,private signService:SignsService ,private signModal:NgbModal) { }
+  file: File = null
+  form: FormGroup;
+  constructor(private formBuilder: FormBuilder,private usersService:UsersService,private signService:SignsService ,private signModal:NgbModal, private router: Router) { }
 
   ngOnInit() {
+    this.form = new FormGroup({
+      word: new FormControl('', [Validators.required]),
+      approved: new FormControl(false, [Validators.required]),
+      file: new FormControl('', [Validators.required])
+    })
       this.addSignForm = this.formBuilder.group({
           name: ['', Validators.required],
           image: ['', Validators.required],
@@ -28,11 +35,9 @@ export class SignComponent implements OnInit {
   {
     this.allsigns=array;
   })
-
-
-
-
-
+}
+onChange(event) {
+  this.file = event.target.files[0];  
 }
   // convenience getter for easy access to form fields
   get f() { return this.addSignForm.controls; }
@@ -85,7 +90,25 @@ openWordModal(id:any){
 
 }
 
+addWord(word){
+  // send to a service http post word
 
+  const formData = new FormData(); 
+        
+  // Store form name as "file" with file data
+  formData.append("file", this.file, this.file.name);
+  formData.append("word", word.word);
+  formData.append("approved", word.approved);
+
+  this.signService.addWord(formData).toPromise().then(()=> {
+    this.router.navigateByUrl('login', {skipLocationChange: true}).then(()=> {
+      this.router.navigateByUrl('home')
+    })
+    return 'created'
+  }).catch((err) => {
+    return err.message;
+  })
+}
 }
 
 

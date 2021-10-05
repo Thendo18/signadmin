@@ -20,9 +20,9 @@ export class ModalContentComponent implements OnInit {
     this.signServ.getOne(localStorage.getItem("id")).subscribe((req)=>
     {
       this.selected=req
-     
-
     })
+    console.log(this.selected);
+    
   }
 
   
