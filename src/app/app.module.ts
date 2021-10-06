@@ -23,7 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgApexchartsModule } from 'ng-apexcharts';
 //import { ToastrModule } from 'ngx-toastr';        
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { piechartComponent} from './components/charts/sign-charts/pie/pie-chart.component';
+
 import {ToastrService} from 'ngx-toastr';
 import { MailComponent } from './components/mail/mail.component';
 import { ChartsComponent } from './components/charts/charts/charts.component';
@@ -44,7 +44,6 @@ import { ChartsComponent } from './components/charts/charts/charts.component';
     UserTablePageComponent,
     ModalContentComponent,
     MailComponent,
-    piechartComponent,
     ChartsComponent
    
   ],

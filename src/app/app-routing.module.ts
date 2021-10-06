@@ -8,7 +8,8 @@ import { SignComponent } from './components/Tables/sign/sign.component';
 import { BlacklistComponent } from './components/Tables/blacklist/blacklist.component';
 import { RequestedComponent } from './components/Tables/requested/requested.component';
 import { UserTablePageComponent } from './pages/user-table-page/user-table-page.component';
-import { SignChartsComponent } from './components/charts/sign-charts/graphs/sign-charts.component';
+import { ChartsComponent } from './components/charts/charts/charts.component';
+
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
   {path:'black',component:BlacklistComponent},
   {path:'req',component:RequestedComponent},
   {path:'userTable',component:UserTablePageComponent},
-{path: 'charts',component:SignChartsComponent}
+{path: 'charts',component:ChartsComponent}
 
 ];
 

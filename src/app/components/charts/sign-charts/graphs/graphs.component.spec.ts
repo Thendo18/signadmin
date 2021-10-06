@@ -2,19 +2,19 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GraphsComponent } from './graphs.component';
 
-describe('SignChartsComponent', () => {
-  let component: graphsComponent ;
-  let fixture: ComponentFixture<graphsComponent >;
+describe('graphsComponent', () => {
+  let component: GraphsComponent ;
+  let fixture: ComponentFixture<GraphsComponent >;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ graphsComponent  ]
+      declarations: [ GraphsComponent  ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(graphsComponent );
+    fixture = TestBed.createComponent(GraphsComponent );
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

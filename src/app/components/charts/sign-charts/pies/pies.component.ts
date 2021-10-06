@@ -12,12 +12,12 @@ export type ChartOptions = {
   labels: any;
 };
 @Component({
-  selector: 'app-pie-chart',
-  templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.scss']
+  selector: 'app-pies',
+  templateUrl: './pies-pies.component.html',
+  styleUrls: ['./pies-pies.component.scss']
 })
-export class piechartComponent {
-  @ViewChild("chart") chart: piechartComponent;
+export class PiesComponent {
+  @ViewChild("chart") chart: PiesComponent;
   public chartOptions: Partial<ChartOptions>;
 
   constructor() { this.chartOptions = {

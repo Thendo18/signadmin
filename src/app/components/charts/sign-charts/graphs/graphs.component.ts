@@ -15,11 +15,11 @@ export type ChartOptions = {
   title: ApexTitleSubtitle;
 };
 @Component({
-  selector: 'app-graph-charts',
-  templateUrl: './graph.component.html',
-  styleUrls: ['./graph.component.scss']
+  selector: 'app-graphs',
+  templateUrl: './graphs.component.html',
+  styleUrls: ['./graphs.component.scss']
 })
-export class SignChartsComponent implements OnInit {
+export class GraphsComponent implements OnInit {
 
   title(title: any) {
     throw new Error('Method not implemented.');
