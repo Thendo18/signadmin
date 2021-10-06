@@ -56,15 +56,15 @@ export class UsersComponent implements OnInit {
 
   delete(id: any) {
     // console.log("index:"+id);
-    if (confirm("Are you sure you want to delete this user")) {
+    if (confirm("Are you sure you want to delete this user")) 
+    {
       this.usersService.delete_user(id).subscribe((res) => res);
     }
   }
 
-  blacklist(userId: any): void {
-  
-    this.usersService
-      .update_user(userId, { blacklisted: true })
+  blacklist(userId: any): void 
+  {
+    this.usersService.update_user(userId, { blacklisted: true })
       .toPromise()
       .then(() => {
         this.router
