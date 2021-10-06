@@ -26,7 +26,7 @@ export class pieComponent {
       width: 380,
       type: "pie"
     },
-    labels: ["Active users", "blacklisted users"],
+    labels: ["Active users", "blacklisted users", "Active users"],
     responsive: [
       {
         breakpoint: 480,

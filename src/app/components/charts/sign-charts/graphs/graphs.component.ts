@@ -31,8 +31,8 @@ export class GraphsComponent implements OnInit {
     this.chartOptions = {
       series: [
         {
-          name: "Users/Signs",
-          data: [5, 1 , ,10, 2, ],
+          name: "Signs",
+          data: [10, 5 , 10, ],
 
           
         }
@@ -46,11 +46,11 @@ export class GraphsComponent implements OnInit {
     
       },
       title: {
-        text: "Users/Signs"
+        text: "Signs"
       },
 
       xaxis: {
-        categories: ["Active users","Blacklisted users",  "Accepted signs ", " Rejected signs"]
+        categories: ["Accepted signs ", " Rejected signs", "Available signs"]
       },
       
       

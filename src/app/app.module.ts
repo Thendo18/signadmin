@@ -27,6 +27,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ToastrService} from 'ngx-toastr';
 import { MailComponent } from './components/mail/mail.component';
 import { ChartsComponent } from './components/charts/charts/charts.component';
+import { PiesComponent } from './components/charts/sign-charts/pies/pies.component';
+import { pieComponent } from './components/charts/user-chart/pie/pie.component';
+import { GraphComponent } from './components/charts/user-chart/graph/graph.component';
+import { GraphsComponent } from './components/charts/sign-charts/graphs/graphs.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { ChartsComponent } from './components/charts/charts/charts.component';
     UserTablePageComponent,
     ModalContentComponent,
     MailComponent,
-    ChartsComponent
+    ChartsComponent,
+    PiesComponent,
+    pieComponent,
+    GraphComponent,
+    GraphsComponent
    
   ],
   imports: [

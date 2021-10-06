@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GraphComponent } from './graph.component';
 
-describe('SignChartsComponent', () => {
+describe('GraphsComponent', () => {
   let component: GraphComponent;
   let fixture: ComponentFixture<GraphComponent>;
 

@@ -13,8 +13,8 @@ export type ChartOptions = {
 };
 @Component({
   selector: 'app-pies',
-  templateUrl: './pies-pies.component.html',
-  styleUrls: ['./pies-pies.component.scss']
+  templateUrl: './pies.component.html',
+  styleUrls: ['./pies.component.scss']
 })
 export class PiesComponent {
   @ViewChild("chart") chart: PiesComponent;
@@ -26,7 +26,7 @@ export class PiesComponent {
       width: 380,
       type: "pie"
     },
-    labels: ["Active users", "blacklisted users"],
+    labels: ["Active signs", "blacklisted signs", "Active signs"],
     responsive: [
       {
         breakpoint: 480,
