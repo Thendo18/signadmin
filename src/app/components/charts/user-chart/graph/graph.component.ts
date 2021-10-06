@@ -41,7 +41,7 @@ export class GraphComponent implements OnInit {
       chart: {
         height: 350,
         type: "bar",
-        width: '25%'
+        width: '80%'
         
     
       },
