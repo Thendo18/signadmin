@@ -10,8 +10,8 @@ import { SignsService } from 'src/app/services/signs.service';
 
 
 export class ModalContentComponent implements OnInit {
-  @Input() word;
-  @Input() pic_gif;
+  @Input() word:any;
+  @Input() pic_gif:any;
   
   selected:any;
   constructor(private modalService:NgbModal,public activeModal: NgbActiveModal,public signServ:SignsService) { }

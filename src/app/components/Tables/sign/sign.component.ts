@@ -5,6 +5,7 @@ import { SignsService } from 'src/app/services/signs.service';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { ModalContentComponent } from '../../modal-content/modal-content.component';
 import { Router } from '@angular/router';
+import { EditModalComponent } from '../../edit-modal/edit-modal.component';
 @Component({
   selector: 'app-sign',
   templateUrl: './sign.component.html',
@@ -89,7 +90,17 @@ openWordModal(id:any){
   const modalRef= this.signModal.open(ModalContentComponent, ngbModalOptions)
 
 }
+openWordModalD(id:any){
 
+  localStorage.setItem("id",id );
+  let ngbModalOptions : NgbModalOptions = {
+    backdrop: 'static',
+    keyboard:false,
+    size:'md',
+  };
+  const modalRef= this.signModal.open(EditModalComponent, ngbModalOptions)
+
+}
 addWord(word){
   // send to a service http post word
 
