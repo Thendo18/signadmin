@@ -33,6 +33,7 @@ import { SignChartsComponent } from './components/charts/sign-charts/sign-charts
 import { piechartComponent} from './components/charts/pie-chart/pie-chart.component'
 import {ToastrModule, ToastrService} from 'ngx-toastr';
 import { MailComponent } from './components/mail/mail.component';
+import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MailComponent } from './components/mail/mail.component';
     MailComponent,
    
     SignChartsComponent,
-    piechartComponent
+    piechartComponent,
+    EditModalComponent
    
   ],
   imports: [

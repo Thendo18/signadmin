@@ -28,8 +28,8 @@ export class SignsService {
 
   }
 
-     public updateWord(word:Signs){
-        return this.http.put<Signs>(`${this.url}/${word._id}`,word)
+     public updateWord(id:any,body:any){
+        return this.http.put<Signs>(`${this.url}/${id}`,body)
 
 
      }
