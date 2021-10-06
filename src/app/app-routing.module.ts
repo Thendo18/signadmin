@@ -8,7 +8,7 @@ import { SignComponent } from './components/Tables/sign/sign.component';
 import { BlacklistComponent } from './components/Tables/blacklist/blacklist.component';
 import { RequestedComponent } from './components/Tables/requested/requested.component';
 import { UserTablePageComponent } from './pages/user-table-page/user-table-page.component';
-import { ChartsComponent } from './components/charts/charts/charts.component';
+import { ChartsComponent } from './components/apex-charts/charts/charts.component';
 
 
 
