@@ -28,8 +28,8 @@ export class NavbarComponent implements OnInit {
   logout(){
     this.token  = null;
     localStorage.removeItem('Token');
-    this.router.navigateByUrl("/Login")
-    // window.location.reload();
+    this.router.navigate(['/']);
+    window.location.reload();
 }
 convert(): void {
   let username: string = this.token.username;

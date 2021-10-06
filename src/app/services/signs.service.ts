@@ -23,8 +23,8 @@ export class SignsService {
   return this.http.get(`${this.url}/${id}`);
   }
 
-  public addWord(word:Signs){
-    return this.http.post<Signs>(`${this.url}`,word);
+  public addWord(word:any){
+    return this.http.post(`${this.url}/upload`,word);
 
   }
 

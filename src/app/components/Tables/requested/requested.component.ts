@@ -22,12 +22,14 @@ export class RequestedComponent implements OnInit {
   }
 
 
-  delete(id:any)
-  {
-   this.requestedService.deleteUsers(id).subscribe((req)=>
-   {
+  // delete(id:any)
+  // {
+  //  this.requestedService.deleteUsers(id).subscribe((req)=>
+  //  {
      
-   });
+  //  });
     
-  }
+  // }
+
+
 }

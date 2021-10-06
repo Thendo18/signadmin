@@ -13,15 +13,18 @@ import { ChartsComponent } from './components/charts/charts/charts.component';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginPageComponent },
-  { path: 'Register', component: RegisterComponent },
-  { path: '', component: HomeComponent },
-  {path:'users',component:UsersComponent},
-  {path:'sign',component:SignComponent},
-  {path:'black',component:BlacklistComponent},
-  {path:'req',component:RequestedComponent},
-  {path:'userTable',component:UserTablePageComponent},
-{path: 'charts',component:ChartsComponent}
+  // { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', component: LoginPageComponent, pathMatch: 'full' },
+  { path: 'register', component: RegisterComponent, pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, pathMatch: 'full' },
+  {path:'users',component:UsersComponent, pathMatch: 'full'},
+  {path:'sign',component:SignComponent, pathMatch: 'full'},
+  {path:'black',component:BlacklistComponent, pathMatch: 'full'},
+  {path:'req',component:RequestedComponent, pathMatch: 'full'},
+  {path:'userTable',component:UserTablePageComponent, pathMatch: 'full'},
+  {path: 'charts',component:ChartsComponent},
+  // { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {path: '**', redirectTo: '', pathMatch: 'full'}
 
 ];
 

@@ -1,11 +1,15 @@
+<div class="row">
+  <div class="col"></div>
+  <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
 <div class="card m-3">
+
   <h5 class="card-header">Login</h5>
   <div class="card-body">
     <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" id="forms">
       <div class="form-group col">
-        <label>User Name</label>
+        <label>Email</label>
         <input
-          type="text"
+          type="email"
           formControlName="username"
           class="form-control"
           [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
@@ -20,7 +24,7 @@
       <div class="form-group col">
         <label>Password</label>
         <input
-          type="text"
+          type="password"
           formControlName="password"
           class="form-control"
           [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
@@ -33,9 +37,12 @@
       <div class="text-center">
         <button class="btn btn-primary">Login</button>
         <p class="message">
-          Already registered? <a routerLink="/Register">Sign Up</a>
+          Already registered? <a routerLink="/register">Sign Up</a>
         </p>
       </div>
     </form>
   </div>
+</div>
+</div>
+<div class="col"></div>
 </div>
