@@ -27,10 +27,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ToastrModule, ToastrService} from 'ngx-toastr';
 import { MailComponent } from './components/mail/mail.component';
 import { ChartsComponent } from './components/charts/charts/charts.component';
-import { PiesComponent } from './components/charts/sign-charts/pies/pies.component';
-import { pieComponent } from './components/charts/user-chart/pie/pie.component';
-import { GraphComponent } from './components/charts/user-chart/graph/graph.component';
-import { GraphsComponent } from './components/charts/sign-charts/graphs/graphs.component';
+import { PiesComponent } from './components/charts/charts/sign-charts/pies/pies.component';
+import { pieComponent } from './components/charts/charts/user-chart/pie/pie.component';
+import { GraphComponent } from './components/charts/charts/user-chart/graph/graph.component';
+import { GraphsComponent } from './components/charts/charts/sign-charts/graphs/graphs.component';
 
 @NgModule({
   declarations: [
