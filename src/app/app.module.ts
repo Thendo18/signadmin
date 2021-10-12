@@ -17,23 +17,20 @@ import { UserTablePageComponent } from './pages/user-table-page/user-table-page.
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 //import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
 import { FormsModule } from '@angular/forms';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { NgApexchartsModule } from 'ng-apexcharts';
-
-
 //import { ToastrModule } from 'ngx-toastr';        
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { SignChartsComponent } from './components/charts/sign-charts/sign-charts.component';
-
-import { piechartComponent} from './components/charts/pie-chart/pie-chart.component'
 import {ToastrModule, ToastrService} from 'ngx-toastr';
 import { MailComponent } from './components/mail/mail.component';
-import { EditModalComponent } from './components/edit-modal/edit-modal.component';
+import { ChartsComponent } from './components/apex-charts/charts/charts.component';
+import { PiesComponent } from './components/apex-charts/sign-charts/pies/pies.component';
+import { pieComponent } from './components/apex-charts/user-chart/pie/pie.component';
+import { GraphComponent } from './components/apex-charts/user-chart/graph/graph.component';
+import { GraphsComponent } from './components/apex-charts/sign-charts/graphs/graphs.component';
 
 @NgModule({
   declarations: [
@@ -51,10 +48,11 @@ import { EditModalComponent } from './components/edit-modal/edit-modal.component
     UserTablePageComponent,
     ModalContentComponent,
     MailComponent,
-   
-    SignChartsComponent,
-    piechartComponent,
-    EditModalComponent
+    ChartsComponent,
+    PiesComponent,
+    pieComponent,
+    GraphComponent,
+    GraphsComponent
    
   ],
   imports: [

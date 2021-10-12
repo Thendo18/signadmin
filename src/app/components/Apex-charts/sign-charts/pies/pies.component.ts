@@ -12,21 +12,21 @@ export type ChartOptions = {
   labels: any;
 };
 @Component({
-  selector: 'app-pie-chart',
-  templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.scss']
+  selector: 'app-pies',
+  templateUrl: './pies.component.html',
+  styleUrls: ['./pies.component.scss']
 })
-export class piechartComponent {
-  @ViewChild("chart") chart: piechartComponent;
+export class PiesComponent {
+  @ViewChild("chart") chart: PiesComponent;
   public chartOptions: Partial<ChartOptions>;
 
   constructor() { this.chartOptions = {
-    series: [44, 55, 13, 43, 22 , 12],
+    series: [44, 55,],
     chart: {
       width: 380,
       type: "pie"
     },
-    labels: ["Active users", "blacklisted users", "Available signs", "Requested signs", "Accepted signs","Rejected signs"],
+    labels: ["Active signs", "blacklisted signs", "Active signs"],
     responsive: [
       {
         breakpoint: 480,

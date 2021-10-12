@@ -8,6 +8,8 @@ import { SignComponent } from './components/Tables/sign/sign.component';
 import { BlacklistComponent } from './components/Tables/blacklist/blacklist.component';
 import { RequestedComponent } from './components/Tables/requested/requested.component';
 import { UserTablePageComponent } from './pages/user-table-page/user-table-page.component';
+import { ChartsComponent } from './components/apex-charts/charts/charts.component';
+
 
 
 const routes: Routes = [
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path:'black',component:BlacklistComponent, pathMatch: 'full'},
   {path:'req',component:RequestedComponent, pathMatch: 'full'},
   {path:'userTable',component:UserTablePageComponent, pathMatch: 'full'},
+  {path: 'charts',component:ChartsComponent},
+  // { path: '', redirectTo: 'login', pathMatch: 'full' },
   {path: '**', redirectTo: '', pathMatch: 'full'}
 
 ];

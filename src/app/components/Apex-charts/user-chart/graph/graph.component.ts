@@ -15,11 +15,11 @@ export type ChartOptions = {
   title: ApexTitleSubtitle;
 };
 @Component({
-  selector: 'app-sign-charts',
-  templateUrl: './sign-charts.component.html',
-  styleUrls: ['./sign-charts.component.scss']
+  selector: 'app-graph',
+  templateUrl: './graph.component.html',
+  styleUrls: ['./graph.component.scss']
 })
-export class SignChartsComponent implements OnInit {
+export class GraphComponent implements OnInit {
 
   title(title: any) {
     throw new Error('Method not implemented.');
@@ -31,25 +31,27 @@ export class SignChartsComponent implements OnInit {
     this.chartOptions = {
       series: [
         {
-          name: "Users/Signs",
-          data: [5, 1 , 10, 2, 5, 8 ] 
+          name: "Users",
+          data: [5, 1 , 10, ],
+
+          
         }
 
       ],
       chart: {
         height: 350,
         type: "bar",
-        width: '25%'
+        width: '80%'
+        
     
       },
       title: {
-        text: "Users/Signs"
+        text: "Users"
       },
-      xaxis: {
-        categories: ["Users", "Signs"]
-      },
-      
 
+      xaxis: {
+        categories: ["Active users","Blacklisted users",  "Active users ", ]
+      },
       
       
     };

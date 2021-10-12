@@ -40,7 +40,7 @@
           role="button" data-mdb-toggle="dropdown" aria-expanded="false">
           <img
             src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/50/000000/external-user-user-interface-flatart-icons-flat-flatarticons-1.png" />
-        </a>
+      </a>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
           <li>
 
@@ -48,9 +48,12 @@
             <a class="dropdown-item" *ngIf="gettingUsername">{{token.username}}</a>
           </li>
           <li>
-            <a class="dropdown-item" href="#">Settings</a>
+            
+            <a class="dropdown-item" href="charts" >View Report </a>
           </li>
+     
           <li>
+
             <a class="dropdown-item" (click)="logout()">Logout</a>
           </li>
         </ul>

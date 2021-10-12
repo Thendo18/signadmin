@@ -53,4 +53,8 @@ export class cardsComponent implements OnInit {
     this.router.navigateByUrl("login");
     console.log("pressed");
   }
+
+  btnClick= function () {
+    this.router.navigateByUrl('charts');
+};
 }
