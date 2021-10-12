@@ -82,8 +82,8 @@ export class EditModalComponent implements OnInit {
       
     this.toast.success('successfully updated', 'word update',
     {timeOut: 5000},);;
-    window.location.reload(); 
-    this.signServ.isUpdated.next(true);
+   
+    
   }
   
 
