@@ -15,15 +15,16 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { cardsComponent } from './components/cards/cards.component';
 import { UserTablePageComponent } from './pages/user-table-page/user-table-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FormsModule } from '@angular/forms';
+
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgApexchartsModule } from 'ng-apexcharts';
 //import { ToastrModule } from 'ngx-toastr';        
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CommonModule } from '@angular/common';
 import {ToastrModule, ToastrService} from 'ngx-toastr';
 import { MailComponent } from './components/mail/mail.component';
 import { ChartsComponent } from './components/apex-charts/charts/charts.component';
@@ -31,7 +32,7 @@ import { PiesComponent } from './components/apex-charts/sign-charts/pies/pies.co
 import { pieComponent } from './components/apex-charts/user-chart/pie/pie.component';
 import { GraphComponent } from './components/apex-charts/user-chart/graph/graph.component';
 import { GraphsComponent } from './components/apex-charts/sign-charts/graphs/graphs.component';
-
+import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { GraphsComponent } from './components/apex-charts/sign-charts/graphs/gra
     PiesComponent,
     pieComponent,
     GraphComponent,
-    GraphsComponent
+    GraphsComponent,
+    EditModalComponent
    
   ],
   imports: [
@@ -60,6 +62,7 @@ import { GraphsComponent } from './components/apex-charts/sign-charts/graphs/gra
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    CommonModule,
     FormsModule,
     NgApexchartsModule,
     BrowserAnimationsModule, // required animations module
