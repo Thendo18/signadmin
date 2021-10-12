@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router"; 
 import { BlacklistedService } from "src/app/services/blacklisted.service";
 import { UsersService } from "src/app/services/users.service";
+import { MustMatch } from "src/app/_helpers/must-match.validator";
+import { ToastrService } from "ngx-toastr";
+
 
 @Component({
   selector: "app-users",
@@ -24,24 +27,50 @@ export class UsersComponent implements OnInit {
     private formBuilder: FormBuilder,
     private usersService: UsersService,
     public router: Router,
-    private blacklistService: BlacklistedService
+    private blacklistService: BlacklistedService,
+    private toastr:ToastrService
   ) {}
 
   ngOnInit(): void {
     this.getUsers();
-    this.registerForm = this.formBuilder.group({
-      username: ["", Validators.required],
-    });
+    this.addUsersForm = this.formBuilder.group(
+      {
+        username: ["", [Validators.required, Validators.email]],
+        password: ["", [Validators.required, Validators.minLength(8)]],
+        confirmPassword: ["", Validators.required],
+        blacklisted:["false"],
+      },
+      {
+        validator: MustMatch("password", "confirmPassword"),
+      }
+    );
+  }
+  get f() 
+  {
+    return this.addUsersForm.controls;
   }
 
   onSubmit() {
     this.submitted = true;
 
     // stop here if form is invalid
-    if (this.registerForm.invalid) {
+    if (this.addUsersForm.invalid) {
       return;
     }
 
+
+    this.usersService.add_User(this.addUsersForm.value).subscribe(
+      (res) => {
+        this.router.navigateByUrl("/login");
+        this.toastr.success("Succesfully Registered");
+        
+    },
+      (error) => {
+        this.toastr.warning(
+          'Username already exist'
+        );
+      }
+    );
     // display form values on success
     alert(
       "SUCCESS!! :-)\n\n" + JSON.stringify(this.registerForm.value, null, 4)
@@ -90,18 +119,6 @@ export class UsersComponent implements OnInit {
       });
   }
 
-  get f() 
-  {
-    return this.addUsersForm.controls;
-  }
+ 
 
-  addUser() 
-  {
-  
-    // this.router.navigateByUrl("/modal")
-    // console.log(users + "details");
-    // this.usersService.add_User(users).subscribe((req) => {
-    //   console.log(req);
-    // });
-  }
 }
