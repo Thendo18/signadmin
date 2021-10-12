@@ -8,8 +8,6 @@ import { Users } from '../Classes/users';
 })
 export class RequestedService {
   url: string ="http://localhost:3000/requestedsigns";
-  
-  
 
   constructor(private http: HttpClient) {}
 
@@ -29,8 +27,6 @@ export class RequestedService {
  
   return this.http.get(`${this.url}/${id}`);
   }
-
-
 
   public AddUsers(details: Users){
     return this.http.post<Users>(`${this.url}`,details);

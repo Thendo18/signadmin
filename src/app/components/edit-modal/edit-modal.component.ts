@@ -20,7 +20,7 @@ export class EditModalComponent implements OnInit {
   @Input() word:any;
   @Input() pic_gif:any;
   @Output() focusOut: EventEmitter<number> = new EventEmitter<number>();
-  
+  isUpdated: boolean;
   editForm:FormGroup;
   retrievedWord:any;
   editMode = false;
@@ -82,13 +82,10 @@ export class EditModalComponent implements OnInit {
       
     this.toast.success('successfully updated', 'word update',
     {timeOut: 5000},);;
-      
+    window.location.reload(); 
+    this.signServ.isUpdated.next(true);
   }
-  refresh(): void {
-   
-   
-    window.location.reload();
-  }
+  
 
   get f() 
   {

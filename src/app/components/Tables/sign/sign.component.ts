@@ -6,20 +6,26 @@ import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { ModalContentComponent } from '../../modal-content/modal-content.component';
 import { Router } from '@angular/router';
 import { EditModalComponent } from '../../edit-modal/edit-modal.component';
+
+
 @Component({
   selector: 'app-sign',
   templateUrl: './sign.component.html',
   styleUrls: ['./sign.component.scss']
 })
 export class SignComponent implements OnInit {
+ 
+
    private modalRef;
   addSignForm: FormGroup;
   submitted = false;
   allsigns:any;
-  
+  isUpdated: boolean;
   file: File = null
   form: FormGroup;
-  constructor(private formBuilder: FormBuilder,private usersService:UsersService,private signService:SignsService ,private signModal:NgbModal, private router: Router) { }
+  constructor(private formBuilder: FormBuilder,private usersService:UsersService,private signService:SignsService ,private signModal:NgbModal, private router: Router) {}
+    
+   
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -36,6 +42,7 @@ export class SignComponent implements OnInit {
   {
     this.allsigns=array;
   })
+  
 }
 onChange(event) {
   this.file = event.target.files[0];  
@@ -99,7 +106,7 @@ openWordModalD(id:any){
     size:'md',
   };
   const modalRef= this.signModal.open(EditModalComponent, ngbModalOptions)
-
+ 
 }
 addWord(word){
   // send to a service http post word
