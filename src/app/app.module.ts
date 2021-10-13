@@ -33,6 +33,8 @@ import { pieComponent } from './components/apex-charts/user-chart/pie/pie.compon
 import { GraphComponent } from './components/apex-charts/user-chart/graph/graph.component';
 import { GraphsComponent } from './components/apex-charts/sign-charts/graphs/graphs.component';
 import { EditModalComponent } from './components/edit-modal/edit-modal.component';
+import { RadialBarComponent } from './components/Apex-charts/sign-charts/radial-bar/radial-bar.component';
+import { RadialComponent } from './components/Apex-charts/user-chart/radial/radial.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +56,9 @@ import { EditModalComponent } from './components/edit-modal/edit-modal.component
     pieComponent,
     GraphComponent,
     GraphsComponent,
-    EditModalComponent
+    EditModalComponent,
+    RadialBarComponent,
+    RadialComponent
    
   ],
   imports: [
