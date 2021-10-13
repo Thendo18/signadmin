@@ -32,7 +32,7 @@ export class GraphsComponent implements OnInit {
       series: [
         {
           name: "Signs",
-          data: [10, 5 , 10, ],
+          data: [10, 5],
 
           
         }
@@ -41,7 +41,7 @@ export class GraphsComponent implements OnInit {
       chart: {
         height: 350,
         type: "bar",
-        width: '60%'
+        width: '80%'
         
     
       },
@@ -50,7 +50,7 @@ export class GraphsComponent implements OnInit {
       },
 
       xaxis: {
-        categories: ["Accepted signs ", " Rejected signs", "Available signs"]
+        categories: ["Accepted signs ", " Rejected signs"]
       },
       
       

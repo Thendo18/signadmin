@@ -32,7 +32,7 @@ export class GraphComponent implements OnInit {
       series: [
         {
           name: "Users",
-          data: [5, 1 , 10, ],
+          data: [5, 1 ,  ],
 
           
         }
@@ -41,7 +41,7 @@ export class GraphComponent implements OnInit {
       chart: {
         height: 350,
         type: "bar",
-        width: '60%'
+        width: '80%'
         
     
       },
@@ -50,7 +50,7 @@ export class GraphComponent implements OnInit {
       },
 
       xaxis: {
-        categories: ["Active users","Blacklisted users",  "Active users ", ]
+        categories: ["whitelisted users","Blacklisted users", ]
       },
       
       

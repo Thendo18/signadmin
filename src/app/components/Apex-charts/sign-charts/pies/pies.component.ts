@@ -23,10 +23,10 @@ export class PiesComponent {
   constructor() { this.chartOptions = {
     series: [44, 55,],
     chart: {
-      width: 200,
+      width: 400,
       type: "pie"
     },
-    labels: ["Active signs", "blacklisted signs", "Active signs"],
+    labels: ["Active signs", "blacklisted signs"],
     responsive: [
       {
         breakpoint: 480,
