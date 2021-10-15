@@ -33,11 +33,7 @@ export class SignComponent implements OnInit {
       approved: new FormControl(false, [Validators.required]),
       file: new FormControl('', [Validators.required])
     })
-      this.addSignForm = this.formBuilder.group({
-          name: ['', Validators.required],
-          image: ['', Validators.required],
-          
-  })
+    
   this.signService.getAllWord().subscribe((array)=>
   {
     this.allsigns=array;
