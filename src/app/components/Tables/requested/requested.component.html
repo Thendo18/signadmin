@@ -19,7 +19,7 @@
                       <td><img src="{{user.gif}}" alt=""></td>
                       <td>
                         {{user.approve}}
-                        <h6><span (click)="onAccepted(user)">
+                        <h6><span (click)="onAccepted(user.word,user.gif,user.approve)">
                           <img src="https://img.icons8.com/external-bearicons-outline-color-bearicons/25/000000/external-approved-approved-and-rejected-bearicons-outline-color-bearicons-10.png"/>
                         </span>
                           <span (click)="delete(user._id)">

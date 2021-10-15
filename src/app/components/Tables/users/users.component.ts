@@ -44,6 +44,14 @@ export class UsersComponent implements OnInit {
         validator: MustMatch("password", "confirmPassword"),
       }
     );
+
+    this.registerForm = this.formBuilder.group(
+      {
+        username: ["", [Validators.required, Validators.email]],
+      
+      },
+  
+    );
   }
   get f() 
   {
@@ -61,8 +69,8 @@ export class UsersComponent implements OnInit {
 
     this.usersService.add_User(this.addUsersForm.value).subscribe(
       (res) => {
-        this.router.navigateByUrl("/login");
-        this.toastr.success("Succesfully Registered");
+        window.location.reload();
+        this.toastr.success("Succesfully Addeded");
         
     },
       (error) => {
@@ -110,13 +118,15 @@ export class UsersComponent implements OnInit {
   }
 
   Update(id: any) {
-    console.log("Id received" + id);
+  
     this.retrievedUser = id;
     this.usersService
       .update_user(id, this.registerForm.value)
       .subscribe((req) => {
-        console.log(req);
+        window.location.reload();
+     
       });
+   
   }
 
  
