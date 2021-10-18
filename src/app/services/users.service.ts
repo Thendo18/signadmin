@@ -9,15 +9,16 @@ import { Users } from '../Classes/users';
 export class UsersService 
 {
 
-    url: string ="http://translate.herokuapp.com/auth/";
-    signUp:string="http://translate.herokuapp.com/auth/signup"; 
-    signIn:string="http://translate.herokuapp.com/auth/signin"; 
+    url: string ="https://sign-translate.herokuapp.com/auth/";
+    signUp:string="https://sign-translate.herokuapp.com/auth/signup"; 
+    signIn:string="https://sign-translate.herokuapp.com/auth/signin"; 
 
     constructor( private httpClient:HttpClient) { }
 
     get_All_Users()
     {
       return this.httpClient.get(`${this.url}status/false`)
+  
     }
 
     get_One_User(id:any)
