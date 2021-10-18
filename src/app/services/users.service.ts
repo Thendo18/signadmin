@@ -10,8 +10,8 @@ export class UsersService
 {
 
     url: string ="http://translate.herokuapp.com/auth/";
-    signUp:string="http://localhost:3000/auth/signup"; 
-    signIn:string="http://localhost:3000/auth/signin"; 
+    signUp:string="http://translate.herokuapp.com/auth/signup"; 
+    signIn:string="http://translate.herokuapp.com/auth/signin"; 
 
     constructor( private httpClient:HttpClient) { }
 
