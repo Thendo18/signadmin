@@ -9,9 +9,9 @@ import { Users } from '../Classes/users';
 export class UsersService 
 {
 
-    url: string ="https://translate.herokuapp.com/auth/users/";
-    signUp:string="https://translate.herokuapp.com/auth/signup"; 
-    signIn:string="https://translate.herokuapp.com/auth/signin"; 
+    url: string ="https://sign-translate.herokuapp.com/auth/users/";
+    signUp:string="https://sign-translate.herokuapp.com/auth/signup"; 
+    signIn:string="https://sign-translate.herokuapp.com/auth/signin"; 
 
     constructor( private httpClient:HttpClient) { }
 
