@@ -36,6 +36,8 @@ export class SignComponent implements OnInit {
     
   this.signService.getAllWord().subscribe((array)=>
   {
+    console.log(array);
+    
     this.allsigns=array;
   })
   
