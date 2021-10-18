@@ -22,6 +22,7 @@ export class RequestedComponent implements OnInit {
     this.requestedService.getAllWords().subscribe((words)=> {
 
       this.allWords = words;
+      console.log(this.allWords);
     });
   }
 

@@ -15,6 +15,7 @@
                   <tr *ngFor="let user of allUsers"> 
                       
                       <td>{{user.username.substring(0, user.username.lastIndexOf("@"))}}</td>
+                
                       <td>{{user.username}}</td>
                       <td>
                         <span  (click)="enable(user._id)" id="blacklist">

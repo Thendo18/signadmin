@@ -31,7 +31,8 @@ export class SignComponent implements OnInit {
     this.form = new FormGroup({
       word: new FormControl('', [Validators.required]),
       approved: new FormControl(false, [Validators.required]),
-      file: new FormControl('', [Validators.required])
+      file: new FormControl('', [Validators.required]),
+      username:new FormControl(localStorage.getItem('username'))
     })
     
   this.signService.getAllWord().subscribe((array)=>
