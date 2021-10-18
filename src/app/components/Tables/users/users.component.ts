@@ -88,6 +88,8 @@ export class UsersComponent implements OnInit {
   getUsers(): any {
     this.usersService.get_All_Users().subscribe((arg) => {
       this.users = arg;
+      console.log("details"+this.users);
+      
     });
   }
 
