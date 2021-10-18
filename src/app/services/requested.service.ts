@@ -7,16 +7,22 @@ import { Users } from '../Classes/users';
   providedIn: 'root'
 })
 export class RequestedService {
-  url: string ="http://localhost:3000/requestedsigns";
+  url: string ="https://sign-translate.herokuapp.com/word/";
 
   constructor(private http: HttpClient) {}
 
-  getAllWords() {
-    return this.http.get(this.url).pipe(
-      map(response => response)
+  // getAllWords() {
+  //   return this.http.get(this.url).pipe(
+  //     map(response => response)
 
-  );
+  // );
+
  
+  // }
+
+  getAllWords()
+  {
+    return this.http.get(`${this.url}status/true`)
   }
 
   public getOne(id:any) {

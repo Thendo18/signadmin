@@ -1,5 +1,5 @@
 
-const baseURL = `https://devstrapi.thedigitalacademy.co.za`;
+const baseURL = `https://sign-translate.herokuapp.com`;
 
 export const environment = {
   production: false,

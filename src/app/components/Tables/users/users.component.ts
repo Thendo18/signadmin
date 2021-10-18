@@ -13,7 +13,7 @@ import { ToastrService } from "ngx-toastr";
   styleUrls: ["./users.component.scss"],
 })
 export class UsersComponent implements OnInit {
-  users: any;
+  users: any =[];
 
   submitted = false;
   deletedInfo: any;
@@ -32,6 +32,10 @@ export class UsersComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+    this.view();
+
+
     this.getUsers();
     this.addUsersForm = this.formBuilder.group(
       {
@@ -130,5 +134,14 @@ export class UsersComponent implements OnInit {
   }
 
  
+   view()
+  {
+    this.usersService.user().subscribe((res:any)=>{
+       this.users = res
+        
+    })
+    
+  }
 
+ 
 }

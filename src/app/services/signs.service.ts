@@ -8,13 +8,18 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SignsService {
-  url: string ="https://sign-translate.herokuapp.com/word";
+  url: string ="https://sign-translate.herokuapp.com/word/";
   public isUpdated: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   constructor(private http: HttpClient) { }
     
-    getAllWord(){
-      return this.http.get(this.url).pipe(
-        map(response => response));
+    // getAllWord(){
+    //   return this.http.get(this.url/status/).pipe(
+    //     map(response => response));
+    // }
+
+    getAllWord()
+    {
+      return this.http.get(`${this.url}status/false`)
     }
 
 

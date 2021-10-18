@@ -9,9 +9,9 @@ import { Users } from '../Classes/users';
 export class UsersService 
 {
 
-    url: string ="https://sign-translate.herokuapp.com/auth/";
-    signUp:string="https://sign-translate.herokuapp.com/signup"; 
-    signIn:string="https://sign-translate.herokuapp.com/signin"; 
+    url: string ="http://translate.herokuapp.com/auth/";
+    signUp:string="http://translate.herokuapp.com/auth/signup"; 
+    signIn:string="http://translate.herokuapp.com/auth/signin"; 
 
     constructor( private httpClient:HttpClient) { }
 
@@ -47,4 +47,13 @@ export class UsersService
 
     return this.httpClient.post<Users>(`${this.signIn}`,details);
   }
+
+
+  //Kat's code
+  user()
+  {
+    return this.httpClient.get('https://sign-translate.herokuapp.com/auth/users')
+  }
+
+  
 }
