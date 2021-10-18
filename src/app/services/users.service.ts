@@ -9,7 +9,7 @@ import { Users } from '../Classes/users';
 export class UsersService 
 {
 
-    url: string ="https://sign-translate.herokuapp.com/auth/users/";
+    url: string ="https://sign-translate.herokuapp.com/auth/";
     signUp:string="https://sign-translate.herokuapp.com/auth/signup"; 
     signIn:string="https://sign-translate.herokuapp.com/auth/signin"; 
 
