@@ -38,7 +38,7 @@
           </thead>
           <tbody *ngFor="let user of users; let i = index">
             <tr *ngIf="user">
-              <td>{{ user.username }}</td>
+              <td>{{user.username.substring(0, user.username.lastIndexOf("@"))}}</td>
               <td>{{ user.username }}</td>
 
               <td>

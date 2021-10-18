@@ -31,6 +31,7 @@ export class BlacklistComponent implements OnInit {
   ngOnInit(): void {
     this.blacklistService.getAllUsers().subscribe((users) => {
       this.allUsers = users;
+     
     });
   }
 
@@ -57,5 +58,14 @@ export class BlacklistComponent implements OnInit {
         return err.message;
       });
       window.location.reload();
+  }
+
+  convert(): void {
+    let username: string = this.allUsers.username;
+    username = username.substring(0, username.lastIndexOf("@"))
+    this.allUsers.username = username;
+    console.log(this.allUsers.username);
+    
+    
   }
 }
