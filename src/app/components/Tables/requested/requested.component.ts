@@ -22,7 +22,6 @@ export class RequestedComponent implements OnInit {
     this.requestedService.getAllWords().subscribe((words)=> {
 
       this.allWords = words;
-      console.log(this.allWords);
     });
   }
 
@@ -49,10 +48,8 @@ file:any;
     ]
     this.signService.addWord(this.form.value).subscribe((req)=>
     {
-      console.log(req);
     })
 
-    console.log(this.form.value)
 
 }
    

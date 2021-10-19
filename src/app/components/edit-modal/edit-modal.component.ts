@@ -70,12 +70,10 @@ export class EditModalComponent implements OnInit {
     
   }
   update(id: any) {
-    console.log("Id received" + id);
     this.retrievedWord = id;
     this.signServ.updateWord(id,this.editForm.value)
       
       .subscribe((req) => {
-        console.log(req);
         
       });
       

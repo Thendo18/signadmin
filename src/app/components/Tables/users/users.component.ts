@@ -33,7 +33,7 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.view();
+    // this.view();
 
 
     this.getUsers();
@@ -91,9 +91,7 @@ export class UsersComponent implements OnInit {
 
   getUsers(): any {
     this.usersService.get_All_Users().subscribe((arg) => {
-      this.users = arg;
-      console.log("details"+this.users);
-      
+      this.users = arg;      
     });
   }
 
@@ -113,14 +111,12 @@ export class UsersComponent implements OnInit {
         this.router
           .navigateByUrl("login", { skipLocationChange: true })
           .then(() => {
-            this.router.navigateByUrl("");
+            this.router.navigateByUrl("home");
           });
       })
       .catch((err) => {
         return err.message;
       });
-
-      window.location.reload();
   }
 
   Update(id: any) {
@@ -136,14 +132,14 @@ export class UsersComponent implements OnInit {
   }
 
  
-   view()
-  {
-    this.usersService.user().subscribe((res:any)=>{
-       this.users = res
+  //  view()
+  // {
+  //   this.usersService.user().subscribe((res:any)=>{
+  //      this.users = res
         
-    })
+  //   })
     
-  }
+  // }
 
  
 }

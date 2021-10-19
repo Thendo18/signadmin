@@ -51,10 +51,10 @@ export class UsersService
 
 
   //Kat's code
-  user()
-  {
-    return this.httpClient.get('https://sign-translate.herokuapp.com/auth/users')
-  }
+  // user()
+  // {
+  //   return this.httpClient.get('https://sign-translate.herokuapp.com/auth/users')
+  // }
 
   
 }

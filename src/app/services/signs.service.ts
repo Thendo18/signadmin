@@ -18,29 +18,29 @@ export class SignsService {
     // }
 
     getAllWord()
-    {
-      return this.http.get(`${this.url}status/false`)
+    {      
+      return this.http.get(`${this.url}status/false`) 
     }
 
 
   public getOne(id:any) {
   
  
-  return this.http.get(`${this.url}/${id}`);
+  return this.http.get(`${this.url}${id}`);
   }
 
   public addWord(word:any){
-    return this.http.post(`${this.url}/upload`,word);
+    return this.http.post(`${this.url}upload`,word);
 
   }
 
      public updateWord(id:any,body:any){
-        return this.http.put<Signs>(`${this.url}/${id}`,body)
+        return this.http.put<Signs>(`${this.url}${id}`,body)
 
 
      }
     public deleteWord(id:number){
-      return this.http.delete(`${this.url}/${id}`);
+      return this.http.delete(`${this.url}${id}`);
 
      }
      

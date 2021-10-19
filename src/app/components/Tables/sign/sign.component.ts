@@ -36,9 +36,7 @@ export class SignComponent implements OnInit {
     })
     
   this.signService.getAllWord().subscribe((array)=>
-  {
-    console.log(array);
-    
+  {    
     this.allsigns=array;
   })
   
@@ -56,8 +54,7 @@ onChange(event) {
       if (this.addSignForm.invalid) {
           return;
       }
-      console.log(this.addSignForm.value);
-     this.usersService.add_User(this.addSignForm.value).subscribe((res)=>console.log(res))
+     this.usersService.add_User(this.addSignForm.value).subscribe((res)=>{})
       
       // display form values on success
       alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.addSignForm.value, null, 4));
