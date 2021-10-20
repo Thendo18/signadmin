@@ -13,7 +13,7 @@ import { ToastrService } from "ngx-toastr";
   styleUrls: ["./users.component.scss"],
 })
 export class UsersComponent implements OnInit {
-  users: any;
+  users: any =[];
 
   submitted = false;
   deletedInfo: any;
@@ -32,6 +32,10 @@ export class UsersComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+    // this.view();
+
+
     this.getUsers();
     this.addUsersForm = this.formBuilder.group(
       {
@@ -43,6 +47,14 @@ export class UsersComponent implements OnInit {
       {
         validator: MustMatch("password", "confirmPassword"),
       }
+    );
+
+    this.registerForm = this.formBuilder.group(
+      {
+        username: ["", [Validators.required, Validators.email]],
+      
+      },
+  
     );
   }
   get f() 
@@ -61,8 +73,8 @@ export class UsersComponent implements OnInit {
 
     this.usersService.add_User(this.addUsersForm.value).subscribe(
       (res) => {
-        this.router.navigateByUrl("/login");
-        this.toastr.success("Succesfully Registered");
+        window.location.reload();
+        this.toastr.success("Succesfully Addeded");
         
     },
       (error) => {
@@ -79,7 +91,7 @@ export class UsersComponent implements OnInit {
 
   getUsers(): any {
     this.usersService.get_All_Users().subscribe((arg) => {
-      this.users = arg;
+      this.users = arg;      
     });
   }
 
@@ -99,26 +111,35 @@ export class UsersComponent implements OnInit {
         this.router
           .navigateByUrl("login", { skipLocationChange: true })
           .then(() => {
-            this.router.navigateByUrl("");
+            this.router.navigateByUrl("home");
           });
       })
       .catch((err) => {
         return err.message;
       });
-
-      window.location.reload();
   }
 
   Update(id: any) {
-    console.log("Id received" + id);
+  
     this.retrievedUser = id;
     this.usersService
       .update_user(id, this.registerForm.value)
       .subscribe((req) => {
-        console.log(req);
+        window.location.reload();
+     
       });
+   
   }
 
  
+  //  view()
+  // {
+  //   this.usersService.user().subscribe((res:any)=>{
+  //      this.users = res
+        
+  //   })
+    
+  // }
 
+ 
 }

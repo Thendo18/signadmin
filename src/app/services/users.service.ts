@@ -9,15 +9,16 @@ import { Users } from '../Classes/users';
 export class UsersService 
 {
 
-    url: string ="http://localhost:3000/auth/";
-    signUp:string="http://localhost:3000/auth/signup"; 
-    signIn:string="http://localhost:3000/auth/signin"; 
+    url: string ="https://sign-translate.herokuapp.com/auth/";
+    signUp:string="https://sign-translate.herokuapp.com/auth/signup"; 
+    signIn:string="https://sign-translate.herokuapp.com/auth/signin"; 
 
     constructor( private httpClient:HttpClient) { }
 
     get_All_Users()
     {
       return this.httpClient.get(`${this.url}status/false`)
+  
     }
 
     get_One_User(id:any)
@@ -47,4 +48,13 @@ export class UsersService
 
     return this.httpClient.post<Users>(`${this.signIn}`,details);
   }
+
+
+  //Kat's code
+  // user()
+  // {
+  //   return this.httpClient.get('https://sign-translate.herokuapp.com/auth/users')
+  // }
+
+  
 }

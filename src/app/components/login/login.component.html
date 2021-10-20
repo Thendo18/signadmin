@@ -2,7 +2,6 @@
   <div class="col"></div>
   <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
 <div class="card m-3">
-
   <h5 class="card-header">Login</h5>
   <div class="card-body">
     <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" id="forms">
@@ -33,11 +32,13 @@
           <div *ngIf="f.password.errors.required">Passwordis required</div>
         </div>
       </div>
-
       <div class="text-center">
         <button class="btn btn-primary">Login</button>
         <p class="message">
-          Already registered? <a routerLink="/register">Sign Up</a>
+          Don't have an account? <a routerLink="/register">Sign Up</a>
+        </p>
+        <p class="message">
+         <a routerLink="/register">Forgot Password</a>
         </p>
       </div>
     </form>

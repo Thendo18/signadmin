@@ -31,6 +31,7 @@ export class BlacklistComponent implements OnInit {
   ngOnInit(): void {
     this.blacklistService.getAllUsers().subscribe((users) => {
       this.allUsers = users;
+     
     });
   }
 
@@ -50,12 +51,20 @@ export class BlacklistComponent implements OnInit {
       .update_user(userId, { blacklisted: false })
       .toPromise()
       .then(() => {
-        this.router.navigateByUrl('Login', {skipLocationChange: true}).then(() => {
-          this.router.navigateByUrl('')
+        this.router.navigateByUrl('login', {skipLocationChange: true}).then(() => {
+          this.router.navigateByUrl('home')
         })
       }).catch(err => {
         return err.message;
       });
-      window.location.reload();
+      // window.location.reload();
+  }
+
+  convert(): void {
+    let username: string = this.allUsers.username;
+    username = username.substring(0, username.lastIndexOf("@"))
+    this.allUsers.username = username;
+    
+    
   }
 }

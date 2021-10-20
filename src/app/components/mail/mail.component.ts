@@ -28,7 +28,6 @@ export class MailComponent implements OnInit {
 
   ngOnInit(): void 
   {
-    console.log(this.http.test);
   }
 
   sendMail() 
@@ -41,7 +40,6 @@ export class MailComponent implements OnInit {
       email: this.emailFormControl.value
     }
  
-    console.log(user);
     
     // this.http.sendEmail("http://localhost:3000/mail", user).subscribe(data => {
     //     let res:any = data; 

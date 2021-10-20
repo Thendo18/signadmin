@@ -51,7 +51,6 @@ export class cardsComponent implements OnInit {
   logout()
   {
     this.router.navigateByUrl("login");
-    console.log("pressed");
   }
 
   btnClick= function () {

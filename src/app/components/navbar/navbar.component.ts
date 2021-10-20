@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
  
    this.token = jwt_decode(localStorage.getItem("Token"));
-   console.log(this.token);
+  //  console.log(this.token);
    this.convert();
    this.gettingUsername=true;
 
@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
     this.token  = null;
     localStorage.removeItem('Token');
     this.router.navigate(['/']);
-    window.location.reload();
+   
 }
 convert(): void {
   let username: string = this.token.username;

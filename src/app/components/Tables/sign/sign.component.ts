@@ -31,15 +31,12 @@ export class SignComponent implements OnInit {
     this.form = new FormGroup({
       word: new FormControl('', [Validators.required]),
       approved: new FormControl(false, [Validators.required]),
-      file: new FormControl('', [Validators.required])
+      file: new FormControl('', [Validators.required]),
+      username:new FormControl(localStorage.getItem('username'))
     })
-      this.addSignForm = this.formBuilder.group({
-          name: ['', Validators.required],
-          image: ['', Validators.required],
-          
-  })
+    
   this.signService.getAllWord().subscribe((array)=>
-  {
+  {    
     this.allsigns=array;
   })
   
@@ -57,8 +54,7 @@ onChange(event) {
       if (this.addSignForm.invalid) {
           return;
       }
-      console.log(this.addSignForm.value);
-     this.usersService.add_User(this.addSignForm.value).subscribe((res)=>console.log(res))
+     this.usersService.add_User(this.addSignForm.value).subscribe((res)=>{})
       
       // display form values on success
       alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.addSignForm.value, null, 4));

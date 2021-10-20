@@ -36,6 +36,8 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
+
+
     this.usersService.signInUser(this.LoginForm.value).subscribe(
       (res) => {
         this.userToken = res;
@@ -50,6 +52,7 @@ export class LoginComponent implements OnInit {
         this.toastr.success("Succesfully Logged IN");
         this.router.navigate(['/home']);
       },
+
       (error) => {
         this.toastr.warning("Incorrect Log In Details");
       }

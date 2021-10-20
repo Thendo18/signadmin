@@ -9,7 +9,8 @@ import { Router } from "@angular/router";
   templateUrl: "./register.component.html",
   styleUrls: ["./register.component.scss"],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit 
+{
   registerForm: FormGroup;
   submitted = false;
   constructor(
@@ -19,7 +20,8 @@ export class RegisterComponent implements OnInit {
     private router:Router
   ) {}
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     this.registerForm = this.formBuilder.group(
       {
         username: ["", [Validators.required, Validators.email]],
@@ -33,14 +35,17 @@ export class RegisterComponent implements OnInit {
     );
   }
 
-  get f() {
+  get f() 
+  {
     return this.registerForm.controls;
   }
 
-  onSubmit() {
+  onSubmit() 
+  {
     this.submitted = true;
 
-    if (this.registerForm.invalid) {
+    if (this.registerForm.invalid) 
+    {
       return;
     }
 

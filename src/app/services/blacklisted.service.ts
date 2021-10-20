@@ -7,7 +7,7 @@ import { Users } from '../Classes/users';
   providedIn: 'root'
 })
 export class BlacklistedService {
-  url: string ="http://localhost:3000/auth/status/true";
+  url: string ="https://sign-translate.herokuapp.com/auth/status/true";
   
 
   constructor(private http: HttpClient) {}
