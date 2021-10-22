@@ -16,41 +16,45 @@ import { EditModalComponent } from '../../edit-modal/edit-modal.component';
 export class SignComponent implements OnInit {
  
 
-   private modalRef;
+
   addSignForm: FormGroup;
   submitted = false;
   allsigns:any;
   isUpdated: boolean;
   file: File = null
   form: FormGroup;
+  
   constructor(private formBuilder: FormBuilder,private usersService:UsersService,private signService:SignsService ,private signModal:NgbModal, private router: Router) {}
     
-   
+ 
 
   ngOnInit() {
+
+    
     this.form = new FormGroup({
       word: new FormControl('', [Validators.required]),
-      approved: new FormControl(false, [Validators.required]),
+      approved: new FormControl(true,[Validators.required]),
       file: new FormControl('', [Validators.required]),
-      username:new FormControl(localStorage.getItem('username'))
+      email:new FormControl("localStorage.getItem('username')")
     })
     
   this.signService.getAllWord().subscribe((array)=>
   {    
     this.allsigns=array;
+    console.log(this.allsigns);
+    
   })
   
 }
 onChange(event) {
   this.file = event.target.files[0];  
 }
-  // convenience getter for easy access to form fields
+  
   get f() { return this.addSignForm.controls; }
 
   async onSubmit() {
       this.submitted = true;
 
-      // stop here if form is invalid
       if (this.addSignForm.invalid) {
           return;
       }
@@ -58,7 +62,7 @@ onChange(event) {
       
       // display form values on success
       alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.addSignForm.value, null, 4));
-      localStorage.setItem("form",this.addSignForm.value);
+    
   }
 
   onReset() {

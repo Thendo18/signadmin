@@ -11,19 +11,8 @@ export class RequestedService {
 
   constructor(private http: HttpClient) {}
 
-  // getAllWords() {
-  //   return this.http.get(this.url).pipe(
-  //     map(response => response)
 
-  // );
 
- 
-  // }
-
-  getAllWords()
-  {
-    return this.http.get(`${this.url}status/true`)
-  }
 
   public getOne(id:any) {
   
@@ -34,9 +23,6 @@ export class RequestedService {
   return this.http.get(`${this.url}/${id}`);
   }
 
-  public AddUsers(details: Users){
-    return this.http.post<Users>(`${this.url}`,details);
-  }
 
   public updateUsers(details: Users){
     return this.http.put<Users>(`${this.url}/${details._id}`, details);
