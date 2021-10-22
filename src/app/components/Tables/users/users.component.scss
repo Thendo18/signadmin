@@ -1,18 +1,18 @@
-body {
-    margin: 0;
-    padding: 20px;
-    font-family: sans-serif;
-    padding: 20px;
-  }
+// body {
+//     margin: 0;
+//     padding: 20px;
+//     font-family: sans-serif;
+//     padding: 20px;
+//   }
   
-  * {
-    box-sizing: border-box;
-  }
+//   * {
+//     box-sizing: border-box;
+//   }
   
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+//   .table {
+//     width: 100%;
+//     border-collapse: collapse;
+//   }
   
   .table td,
   .table th {
@@ -33,38 +33,38 @@ body {
   
   /*responsive*/
   
-  @media (max-width: 500px) {
-    .table thead {
-      display: none;
-    }
+  // @media (max-width: 500px) {
+  //   .table thead {
+  //     display: none;
+  //   }
   
-    .table,
-    .table tbody,
-    .table tr,
-    .table td {
-      display: block;
-      width: 100%;
-    }
-    .table tr {
-      margin-bottom: 15px;
-    }
-    .table td {
-      padding-left: 50%;
-      text-align: left;
-      position: relative;
-    }
-    .table td::before 
-    {
-      content: attr(data-label);
-      position: absolute;
-      left: 0;
-      width: 50%;
-      padding-left: 15px;
-      font-size: 15px;
-      font-weight: bold;
-      text-align: left;
-    }
-  }
+  //   .table,
+  //   .table tbody,
+  //   .table tr,
+  //   .table td {
+  //     display: block;
+  //     width: 100%;
+  //   }
+  //   .table tr {
+  //     margin-bottom: 15px;
+  //   }
+  //   .table td {
+  //     padding-left: 50%;
+  //     text-align: left;
+  //     position: relative;
+  //   }
+  //   .table td::before 
+  //   {
+  //     content: attr(data-label);
+  //     position: absolute;
+  //     left: 0;
+  //     width: 50%;
+  //     padding-left: 15px;
+  //     font-size: 15px;
+  //     font-weight: bold;
+  //     text-align: left;
+  //   }
+  // }
   
    .addButton 
    {
@@ -75,11 +75,11 @@ body {
    }
 
 
-   tbody{
+  //  tbody{
    
-    overflow-y:auto;
-    width: 100%;
-    }
+  //   overflow-y:auto;
+  //   width: 100%;
+  //   }
     .my-custom-scrollbar {
       position: relative;
       height: 219px;
