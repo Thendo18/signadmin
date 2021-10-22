@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
-import { RequestedService } from 'src/app/services/requested.service';
+
 import { SignsService } from 'src/app/services/signs.service';
 
 
@@ -13,15 +14,18 @@ export class RequestedComponent implements OnInit {
   
   allWords:any;
 
-  constructor(public requestedService:RequestedService, 
+  constructor( 
     public mail:HttpService,
-    private signService:SignsService) {}
+    private signService:SignsService,
+    private router:Router) {}
 
   ngOnInit(): void {
 
-    this.requestedService.getAllWords().subscribe((words)=> {
+    this.signService.getAllWords().subscribe((words)=> {
 
       this.allWords = words;
+      console.log(this.allWords);
+      
     });
   }
 
@@ -35,24 +39,27 @@ export class RequestedComponent implements OnInit {
     
   // }
 
-form:any;
-word:any;
-approved;
-file:any;
-  onAccepted(word:any,gif:any,approve:any)
-  {
-    this.form[
-    this.word=word,
-    this.approved=true,
-    this.file=gif
-    ]
-    this.signService.addWord(this.form.value).subscribe((req)=>
-    {
+
+
+
+
+
+accept(wordId: any): void 
+{
+  console.log(wordId)
+  this.signService.updateWord(wordId, { approved: true })
+    .toPromise()
+    .then(() => {
+      this.router
+        .navigateByUrl("login", { skipLocationChange: true })
+        .then(() => {
+          this.router.navigateByUrl("home");
+        });
     })
-
-
+    .catch((err) => {
+      return err.message;
+    });
 }
-   
 
 
 }

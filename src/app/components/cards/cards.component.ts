@@ -37,7 +37,7 @@ export class cardsComponent implements OnInit {
           this.sumUsers = array;    
       })
 
-      this.requestedSigns.getAllWords().subscribe((array)=>
+      this.signs.getAllWords().subscribe((array)=>
       {
           this.sumRequested = array;    
       })
