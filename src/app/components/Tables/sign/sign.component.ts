@@ -78,13 +78,12 @@ onChange(event) {
 
    if(confirm("Are you sure you want to delete this word")) 
    { this.signService.deleteWord(id).subscribe((res)=>res)};
-   this.refresh();
-  
-}
-
-refresh(): void {
+   
   window.location.reload();
 }
+
+
+  
 
 openWordModal(id:any){
 
