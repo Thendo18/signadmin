@@ -79,3 +79,16 @@ hr {
   background-color:blue;
   width: 100%;
 }
+
+.card{
+position: absolute;
+height: 50%;
+top: 300px;
+left: 200px;
+background-color:#4169E1;
+opacity: 90%;
+}
+
+.disableOpacity{
+  opacity: 100% !important;
+}

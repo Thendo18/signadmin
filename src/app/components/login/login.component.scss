@@ -1,18 +1,15 @@
 .forms {
   position: relative;
-  z-index: 1;
   background: #f4f4f4;
-  
   margin: 15% auto;
   padding: 20px 0;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   height:100vh;
   width: 100vw;
+  opacity: 30%;
 }
-.form h1 {
-  color: #696763;
-}
+
 .form input {
   outline: 0;
   background: #fff;
@@ -44,7 +41,7 @@
 }
 .form .message {
   margin: 15px 0 0;
-  color: #b3b3b3;
+  color: white;
   font-size: 12px;
 }
 .form .message a {
@@ -64,3 +61,29 @@ hr {
   background-color: #a59b88;
 }
 
+
+.card{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+top: 300px;
+left: 200px;
+background-color:#4169E1;
+opacity: 90%;
+}
+
+container-fluid{
+  background-color:blue;
+  width: 100%;
+}
+
+.row{
+  background: url(../../../assets/wavesOpacity.svg) ;
+  background-color:blue;
+  height: 1100px;
+
+}
+
+.disableOpacity{
+    opacity: 100% !important;
+}

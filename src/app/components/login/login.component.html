@@ -1,13 +1,13 @@
-
+<div class="container-fluid">
   <div class="row ">
     <div class="col"></div>
-    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+    <div class="col-md-4 col-md-4 col-md-6 col-sm-offset-4 col-md-offset-4">
   <div class="card m-3">
-    <h5 class="card-header">Login</h5>
+    <h5 class="card-header " style="color: aliceblue;">Login</h5>
     <div class="card-body">
       <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" id="forms">
         <div class="form-group col">
-          <label>Email</label>
+          <label class="disableOpacity"  style="color: white">Email</label>
           <input
             type="email"
             formControlName="username"
@@ -15,13 +15,13 @@
             [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
           />
           <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Email is required</div>
-            <div *ngIf="f.username.errors.username">
+            <div *ngIf="f.username.errors.required" style="color: aliceblue;">Email is required</div>
+            <div *ngIf="f.username.errors.username" >
               Email must be a valid email address
             </div>
           </div>
         </div>
-        <div class="form-group col">
+        <div class="form-group col" style="color: aliceblue;">
           <label>Password</label>
           <input
             type="password"
@@ -30,16 +30,19 @@
             [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
           />
           <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Passwordis required</div>
+            <div *ngIf="f.password.errors.required">Password is required</div>
           </div>
         </div>
+        <br>
+        <br>
+        <br>
         <div class="text-center">
           <button class="btn btn-primary">Login</button>
-          <p class="message">
-            Don't have an account? <a routerLink="/register">Sign Up</a>
+          <p class="message" style="color: black">
+            Don't have an account? <a routerLink="/register" style="color: aliceblue;">Sign Up</a>
           </p>
           <p class="message">
-           <a routerLink="/register">Forgot Password</a>
+           <a routerLink="/register" style="color: aliceblue;">Forgot Password</a>
           </p>
         </div>
       </form>
@@ -48,6 +51,6 @@
   </div>
   <div class="col"></div>
   </div>
-
+</div>
 
 
