@@ -12,12 +12,17 @@ import { ChartsComponent } from './components/apex-charts/charts/charts.componen
 
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginPageComponent, pathMatch: 'full' },
   { path: 'register', component: RegisterComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent, pathMatch: 'full' },
   {path: 'charts',component:ChartsComponent},
+  {path:'users',component:UsersComponent,pathMatch:'full'},
+  {path:'req',component:RequestedComponent,pathMatch:'full'},
+  {path:'sign',component:SignComponent,pathMatch:'full'},
+  {path:'black',component:BlacklistComponent,pathMatch:'full'},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 
 ];

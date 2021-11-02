@@ -4,6 +4,7 @@ import { UsersService } from "src/app/services/users.service";
 import jwt_decode from "jwt-decode";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
+import { Users } from "src/app/Classes/users";
 
 @Component({
   selector: "app-login",
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.LoginForm = this.formBuilder.group({
+
       username: ["", [Validators.required, Validators.email]],
       password: ["", Validators.required],
     });
