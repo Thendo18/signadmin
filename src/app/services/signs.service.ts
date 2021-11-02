@@ -25,7 +25,7 @@ export class SignsService {
 
 
   public getOne(id:any) {
-  return this.http.get(`${this.url}${id}`);
+  return this.http.get(`${this.url}/${id}`);
   }
 
   public addWord(word:any){

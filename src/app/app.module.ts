@@ -15,7 +15,6 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { cardsComponent } from './components/cards/cards.component';
 import { UserTablePageComponent } from './pages/user-table-page/user-table-page.component';
 import { HttpClientModule } from '@angular/common/http';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -35,6 +34,7 @@ import { GraphsComponent } from './components/apex-charts/sign-charts/graphs/gra
 import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 import { RadialBarComponent } from './components/Apex-charts/sign-charts/radial-bar/radial-bar.component';
 import { RadialComponent } from './components/Apex-charts/user-chart/radial/radial.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +71,7 @@ import { RadialComponent } from './components/Apex-charts/user-chart/radial/radi
     NgApexchartsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
-NgbModule 
+NgbModule ,
     //FontAwesomeModule
   ],
   providers: [],

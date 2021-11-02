@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
 import { SignsService } from 'src/app/services/signs.service';
@@ -16,7 +16,8 @@ import { EditModalComponent } from '../../edit-modal/edit-modal.component';
 export class SignComponent implements OnInit {
  
 
-
+  @Input() word:any;
+  @Input() pic_gif:any;
   addSignForm: FormGroup;
   submitted = false;
   allsigns:any;
