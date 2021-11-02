@@ -17,8 +17,6 @@ import { UserTablePageComponent } from './pages/user-table-page/user-table-page.
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgApexchartsModule } from 'ng-apexcharts';
 //import { ToastrModule } from 'ngx-toastr';        
@@ -31,9 +29,11 @@ import { PiesComponent } from './components/apex-charts/sign-charts/pies/pies.co
 import { pieComponent } from './components/apex-charts/user-chart/pie/pie.component';
 import { GraphComponent } from './components/apex-charts/user-chart/graph/graph.component';
 import { GraphsComponent } from './components/apex-charts/sign-charts/graphs/graphs.component';
-import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 import { RadialBarComponent } from './components/Apex-charts/sign-charts/radial-bar/radial-bar.component';
 import { RadialComponent } from './components/Apex-charts/user-chart/radial/radial.component';
+import { ViewGestureComponent } from './components/Modals/request-view/view-gesture/view-gesture.component';
+import { ModalContentComponent } from './components/Modals/modal-content/modal-content.component';
+import { EditModalComponent } from './components/Modals/edit-modal/edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,8 @@ import { RadialComponent } from './components/Apex-charts/user-chart/radial/radi
     GraphsComponent,
     EditModalComponent,
     RadialBarComponent,
-    RadialComponent
+    RadialComponent,
+    ViewGestureComponent
    
   ],
   imports: [

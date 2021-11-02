@@ -46,10 +46,6 @@ closebutton(videoplayer){
   this.show = !this.show; 
   videoplayer.nativeElement.play();
 }
-
-        
-
-  
 }
     
   

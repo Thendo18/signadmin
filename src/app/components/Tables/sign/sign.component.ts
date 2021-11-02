@@ -3,10 +3,9 @@ import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from
 import { UsersService } from 'src/app/services/users.service';
 import { SignsService } from 'src/app/services/signs.service';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
-import { ModalContentComponent } from '../../modal-content/modal-content.component';
 import { Router } from '@angular/router';
-import { EditModalComponent } from '../../edit-modal/edit-modal.component';
-
+import { EditModalComponent } from '../../Modals/edit-modal/edit-modal.component';
+import { ModalContentComponent } from '../../Modals/modal-content/modal-content.component';
 
 @Component({
   selector: 'app-sign',
