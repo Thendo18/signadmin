@@ -8,7 +8,8 @@
   <div class="modal-body">
  
     <p> {{selected.word}}</p>
-    <img [src]="'data:image/jpeg;base64,'+selected.pic_gif" alt="image" width="400" height="400">
+    <img [src]="'data:image/jpeg;base64,'+selected.pic_gif" alt="image" width="400" height="300">
+    
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btnM btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
