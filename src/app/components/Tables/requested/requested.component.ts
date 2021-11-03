@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { HttpService } from 'src/app/services/http.service';
-
 import { SignsService } from 'src/app/services/signs.service';
-
+import { ModalContentComponent } from '../../Modals/modal-content/modal-content.component';
 
 @Component({
   selector: 'app-requested',
@@ -17,7 +17,8 @@ export class RequestedComponent implements OnInit {
   constructor( 
     public mail:HttpService,
     private signService:SignsService,
-    private router:Router) {}
+    private router:Router,
+    private requestedModal:NgbModal) {}
 
   ngOnInit(): void {
 
@@ -28,21 +29,6 @@ export class RequestedComponent implements OnInit {
       
     });
   }
-
-
-  // delete(id:any)
-  // {
-  //  this.requestedService.deleteUsers(id).subscribe((req)=>
-  //  {
-     
-  //  });
-    
-  // }
-
-
-
-
-
 
 accept(wordId: any): void 
 {
@@ -61,5 +47,14 @@ accept(wordId: any): void
     });
 }
 
-
+openWordModal(pic_gif:any)
+{
+  localStorage.setItem("id",pic_gif);
+  let ngbModalOptions : NgbModalOptions = {
+    backdrop: 'static',
+    keyboard:false,
+    size:'md',
+  };
+  const modalRef= this.requestedModal.open(ModalContentComponent, ngbModalOptions)
+}
 }

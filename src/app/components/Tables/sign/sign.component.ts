@@ -4,8 +4,8 @@ import { UsersService } from 'src/app/services/users.service';
 import { SignsService } from 'src/app/services/signs.service';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
-import { EditModalComponent } from '../../Modals/edit-modal/edit-modal.component';
 import { ModalContentComponent } from '../../Modals/modal-content/modal-content.component';
+import { EditModalComponent } from '../../Modals/edit-modal/edit-modal.component';
 
 @Component({
   selector: 'app-sign',
@@ -25,8 +25,6 @@ export class SignComponent implements OnInit {
   form: FormGroup;
   
   constructor(private formBuilder: FormBuilder,private usersService:UsersService,private signService:SignsService ,private signModal:NgbModal, private router: Router) {}
-    
- 
 
   ngOnInit() {
 
@@ -55,7 +53,8 @@ onChange(event) {
   async onSubmit() {
       this.submitted = true;
 
-      if (this.addSignForm.invalid) {
+      if (this.addSignForm.invalid) 
+      {
           return;
       }
      this.usersService.add_User(this.addSignForm.value).subscribe((res)=>{})
@@ -65,11 +64,11 @@ onChange(event) {
     
   }
 
-  onReset() {
+  onReset() 
+  {
       this.submitted = false;
       this.addSignForm.reset();
- 
-      
+  
   }
        
 
@@ -85,8 +84,8 @@ onChange(event) {
 
   
 
-openWordModal(id:any){
-
+openWordModal(id:any)
+{
   console.log(id);
   localStorage.setItem("id",id );
   let ngbModalOptions : NgbModalOptions = {
@@ -95,7 +94,6 @@ openWordModal(id:any){
     size:'md',
   };
   const modalRef= this.signModal.open(ModalContentComponent, ngbModalOptions)
-
 }
 openWordModalD(id:any){
 
