@@ -31,7 +31,7 @@ export class SignComponent implements OnInit {
     
     this.form = new FormGroup({
       word: new FormControl('', [Validators.required]),
-      approved: new FormControl(false,[Validators.required]),
+      approved: new FormControl(true,[Validators.required]),
       file: new FormControl('', [Validators.required]),
       email:new FormControl("localStorage.getItem('username')")
     })
