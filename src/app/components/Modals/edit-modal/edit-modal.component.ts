@@ -1,5 +1,4 @@
 import { Component, OnInit,Input, EventEmitter, Output } from '@angular/core';
-import { SignComponent } from '../../Tables/sign/sign.component';
 import { SignsService } from 'src/app/services/signs.service';
 import {  NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, SelectMultipleControlValueAccessor, Validators } from '@angular/forms';
