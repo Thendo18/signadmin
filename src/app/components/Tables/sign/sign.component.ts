@@ -33,7 +33,7 @@ export class SignComponent implements OnInit {
     
     this.form = new FormGroup({
       word: new FormControl('', [Validators.required]),
-      approved: new FormControl(true,[Validators.required]),
+      approved: new FormControl(false,[Validators.required]),
       file: new FormControl('', [Validators.required]),
       email:new FormControl("localStorage.getItem('username')")
     })
@@ -79,7 +79,7 @@ onChange(event) {
    if(confirm("Are you sure you want to delete this word")) 
    { this.signService.deleteWord(id).subscribe((res)=>res)};
    
-  window.location.reload();
+  // window.location.reload();
 }
 
 
@@ -87,6 +87,7 @@ onChange(event) {
 
 openWordModal(id:any){
 
+  console.log(id);
   localStorage.setItem("id",id );
   let ngbModalOptions : NgbModalOptions = {
     backdrop: 'static',

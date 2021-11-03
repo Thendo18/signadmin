@@ -10,7 +10,6 @@
       <button type="button" class="btn addButton" data-mdb-ripple-color="dark" onclick="modal" data-toggle="modal"
         data-target="#Modal4">
         <img src="https://img.icons8.com/fluency/24/000000/add.png" />Add</button>
-      <!-- <img src="https://img.icons8.com/material-outlined/24/000000/add.png" />Add</button> -->
     </div>
   </div>
 
@@ -36,8 +35,8 @@
                 </button>
               </td>
               <td>
-                <span>
-                  <img src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/40/000000/external-edit-miscellaneous-kiranshastry-lineal-color-kiranshastry.png"/>
+                <span >
+                  <img (click)="openWordModalD(word._id)" src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/40/000000/external-edit-miscellaneous-kiranshastry-lineal-color-kiranshastry.png"/>
                 </span>
 
                 <span (click)="delete(word._id)">
@@ -52,10 +51,10 @@
   </div>
 
 
-  <!-- Modal -->
+ 
 </div>
 
-<!-- Modal -->
+
 <div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

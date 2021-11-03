@@ -39,7 +39,9 @@ export class SignsService {
 
      }
     public deleteWord(id:number){
+      window.location.reload();
       return this.http.delete(`${this.url}/${id}`);
+    
 
      }
      

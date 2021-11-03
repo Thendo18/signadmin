@@ -17,7 +17,7 @@
        <tr *ngFor="let user of allWords"> 
                       
                       <td>{{user.word}}</td>
-                      <td></td>
+                      <td>  <img [src]="'data:image/jpeg;base64,'+user.pic_gif" alt="image" width="40" height="30"></td>
                       <!-- <td><img src="{{user.pic_gif}}" alt=""></td> -->
                       <td>{{user.email}}</td>
                       <td>
