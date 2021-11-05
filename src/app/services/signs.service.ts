@@ -13,14 +13,12 @@ export class SignsService {
   constructor(private http: HttpClient) { }
     
     getAllWord(){
-      return this.http.get(`${this.url}/status/true`).pipe(
-        map(response => response));
+      return this.http.get(`${this.url}/status/true`);
     }
 
     getAllWords()
     {
-      return this.http.get(`${this.url}/status/false`).pipe(
-        map(response => response));
+      return this.http.get(`${this.url}/status/false`);
     }
 
 

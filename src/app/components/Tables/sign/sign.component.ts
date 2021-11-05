@@ -36,11 +36,9 @@ export class SignComponent implements OnInit {
       email:new FormControl("localStorage.getItem('username')")
     })
     
-  this.signService.getAllWord().subscribe((array)=>
+  this.signService.getAllWord().toPromise().then((array)=>
   {    
-    this.allsigns=array;
-    console.log(this.allsigns);
-    
+    this.allsigns=array;    
   })
   
 }
