@@ -73,6 +73,8 @@ onChange(event) {
   delete(id:any) 
 { 
 
+  
+
    if(confirm("Are you sure you want to delete this word")) 
    { this.signService.deleteWord(id).subscribe((res)=>res)};
    
@@ -84,7 +86,7 @@ onChange(event) {
 
 openWordModal(id:any)
 {
-  console.log(id);
+  
   localStorage.setItem("id",id );
   let ngbModalOptions : NgbModalOptions = {
     backdrop: 'static',

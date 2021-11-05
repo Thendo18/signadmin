@@ -32,7 +32,7 @@ export class RequestedComponent implements OnInit {
 
 accept(wordId: any): void 
 {
-  console.log(wordId)
+ 
   this.signService.updateWord(wordId, { approved: true })
     .toPromise()
     .then(() => {

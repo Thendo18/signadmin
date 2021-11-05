@@ -28,10 +28,10 @@
                       <td>{{user.username}}</td>
                       <td>
                         {{user.approve}}
-                        <h6><span (click)="accept(user._id)">
+                        <h6><span style="cursor: pointer" (click)="accept(user._id)">
                           <img src="https://img.icons8.com/external-bearicons-outline-color-bearicons/25/000000/external-approved-approved-and-rejected-bearicons-outline-color-bearicons-10.png"/>
                         </span>
-                          <span (click)="delete(user._id)">
+                          <span style="cursor: pointer" (click)="delete(user._id)">
                             <img src="https://img.icons8.com/fluency/35/000000/receipt-declined.png"/>
                           </span>
                         </h6> 

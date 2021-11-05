@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { map } from 'rxjs/operators';
 import { Users } from '../Classes/users';
 
 @Injectable({
@@ -16,10 +15,6 @@ export class RequestedService {
 
   public getOne(id:any) {
   
-  //   return this.http.get(`${this.url}/${id}`).pipe(
-  //     map(response => response)
-  // );
- 
   return this.http.get(`${this.url}/${id}`);
   }
 
